@@ -2,15 +2,13 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Auth\LoginController;
+use App\Http\Controllers\WebController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\RoleController;
 use App\Http\Controllers\UserController;
-
 use App\Http\Controllers\SoapController;
 use App\Http\Controllers\LocalizationController;
-
 use App\Http\Controllers\SettingController;
-use App\Http\Controllers\WebController;
 
 
 
@@ -20,12 +18,17 @@ Auth::routes();
 Route::get('lang/{locale}', [LocalizationController::class, 'index'])->name('lang');
 Route::resource('lmslogin', LoginController::class);
 
-Route::get('/', [WebController::class, 'index'])->name('web');
+// --------Web--------------------------------
+Route::get('/', [WebController::class, 'index'])->name('/');
+Route::get('home', [WebController::class, 'index'])->name('home');
+Route::get('about', [WebController::class, 'about'])->name('about');
+
+
 
 Route::group(['middleware' => ['auth']], function() {
 
     // --------Home--------------------------------
-    Route::get('home', [HomeController::class, 'index'])->name('home');
+    Route::get('cms-admin', [HomeController::class, 'index'])->name('cms-admin');
     Route::get('backup_db', [HomeController::class, 'backup_db'])->name('backup_db');
     // --------Roles--------------------------------
     Route::resource('roles', RoleController::class);
@@ -47,9 +50,6 @@ Route::group(['middleware' => ['auth']], function() {
     Route::post('pw_reset', [UserController::class, 'pw_reset'])->name('pw_reset');
     Route::post('delete_users', [UserController::class, 'delete'])->name('delete_users');
     
-   
-    
-
     // -------Settings--------------------------
     Route::get('lms_setting', [SettingController::class, 'lms_setting'])->name('lms_setting');
     Route::get('basic_setting', [SettingController::class, 'basic_setting'])->name('basic_setting');

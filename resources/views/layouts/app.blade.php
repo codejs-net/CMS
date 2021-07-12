@@ -323,7 +323,6 @@ $('#create_by_modal').on('show.bs.modal', function (event) {
 
 
 @stack('scripts')
-
 @yield('script')
     
 

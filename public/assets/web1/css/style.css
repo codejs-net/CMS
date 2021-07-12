@@ -111,7 +111,7 @@ h1, h2, h3, h4, h5, h6 {
 # Header
 --------------------------------------------------------------*/
 #header {
-  height: 70px;
+  height: 90px;
   transition: all 0.5s;
   z-index: 997;
   transition: all 0.5s;
@@ -140,7 +140,7 @@ h1, h2, h3, h4, h5, h6 {
 #header .logo img {
   padding: 0;
   margin: 0;
-  max-height: 40px;
+  max-height: 70px;
 }
 
 #main {
@@ -2368,4 +2368,35 @@ section {
   background: #ff7e54;
   color: #fff;
   text-decoration: none;
+}
+
+/* -----read more */
+.btn-read-more {
+  -moz-text-align-last: right;
+  text-align-last: right;
+}
+
+.btn-read-more a {
+  display: inline-block;
+  background: #ff5821;
+  border-radius: 10px;
+  color: #fff;
+  padding: 6px 20px;
+  transition: 0.3s;
+  font-size: 14px;
+}
+
+.btn-read-more a:hover {
+  background: #ff774a;
+}
+
+/* --------drop down -----*/
+.dropdown_menu{
+  border-radius: 5px !important;
+  animation: growDown 300ms ease-in-out forwards;
+  transform-origin: top center;
+}
+.dropdown-menu{
+  position: absolute !important;
+  overflow: hidden !important;
 }
