@@ -1,4 +1,39 @@
 {
-  "descript1-heading":"ඔබේ සමාගමේ වෙබ් අඩවිය සඳහා තෝරා ගන්නේ ඇයි?"
+  "Home":"මුල් පිටුව",
+  "About":"පිළිබද",
+  "Services":"සේවාවන්",
+  "Establishment":"ආයතන",
+  "Development":"සංවර්ධන",
+  "Environment and Health":"පරිසර සහ සෞඛ්‍ය",
+  "Revenue and Accounts":"ආදායම් සහ ගිණුම්",
+  "Needs":"අවශ්‍යතා",
+  "News & Updates":"පුවත් සහ සිදුවීම්",
+  "Downloads":"බාගත කිරීම්",
+  "Applications":"අයදුම්පත්",
+  "Budget reports":"අයවැය වාර්තා",
+  "Internal audit reports":"අභ්‍යන්තර විගණන වාර්තා",
+  "Sabha wartha":"සභා වාර්තා",
+  "Final Account":"අවසන් ගිණුම්",
 
+  "Information":"තොරතුරු",
+  "Contact":"අමතන්න",
+  "About Bulathkohupitiya":"බුලත්කොහුපිටිය පිළිබඳ",
+  "Pradheshiya Sabha":"ප්‍රාදේශීය සභාව",
+  "Organizational structure":"සංවිධාන ව්‍යුහය",
+
+  "descript-heading":"ආයුබෝවන්..!",
+  "descript-message":"බුලත්කොහුපිටිය ප්‍රාදේශීය සභාව මගින් සපයන සේවාවන් හා සේවාලාභී ඔබට අවශ්‍ය වන අනෙකුත් අවශ්‍යතා ඉටුකරලීම සඳහා වු, බුලත්කොහුපිටිය ප්‍රාදේශීය සභා නිල වෙබ් අඩවිය වෙත සාදරයෙන් පිළිගනිමු",
+  "Bulathkohupitiya Pradeshiya Sabha":"බුලත්කොහුපිටිය ප්‍රාදේශීය සභාව",
+  "Sabaragamuwa Provincial Council":"සබරගමුව පළාත් සභාව",
+  "Get Started":"ආරම්භ කරන්න",
+
+
+
+
+
+
+
+
+
+  "":""
   }

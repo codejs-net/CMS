@@ -20,15 +20,14 @@
   <!-- Bootstrap -->
   <link href="{{ asset('css/app.css') }}" rel="stylesheet">
 
-  <link href="assets/web1/vendor/icofont/icofont.min.css" rel="stylesheet">
-  <link href="assets/web1/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
-  <link href="assets/web1/vendor/venobox/venobox.css" rel="stylesheet">
-  <link href="assets/web1/vendor/owl.carousel/assets/owl.carousel.min.css" rel="stylesheet">
-  <link href="assets/web1/vendor/aos/aos.css" rel="stylesheet">
-  <link href="assets/web1/vendor/animate.css/animate.min.css" rel="stylesheet">
-
+  <link href="{{ asset('assets/web1/vendor/icofont/icofont.min.css') }}" rel="stylesheet">
+  <link href="{{ asset('assets/web1/vendor/boxicons/css/boxicons.min.css') }}" rel="stylesheet">
+  <link href="{{ asset('assets/web1/vendor/venobox/venobox.css') }}" rel="stylesheet">
+  <link href="{{ asset('assets/web1/vendor/owl.carousel/assets/owl.carousel.min.css') }}" rel="stylesheet">
+  <link href="{{ asset('assets/web1/vendor/aos/aos.css') }}" rel="stylesheet">
+  <link href="{{ asset('assets/web1/vendor/animate.css/animate.min.css') }}" rel="stylesheet">
   <!-- Template Main CSS File -->
-  <link href="assets/web1/css/style.css" rel="stylesheet">
+  <link href="{{ asset('assets/web1/css/style.css') }}" rel="stylesheet">
 
 
 </head>
@@ -45,22 +44,34 @@
 
     <!--== Description Section == -->
     @include('web.partials.description')
+
+     <!-- ====== Team Section ========== -->
+    @include('web.partials.team')
+
     <!-- ======= About Section ======= -->
     @include('web.partials.about')
-    <!-- ======= Counts Section ======= -->
-    @include('web.partials.count')
-    <!-- ====== Clients Section ======= -->
-    {{-- @include('web.partials.client') --}}
-    <!-- ===== Services Section ======= -->
-    @include('web.partials.service')
+
     <!-- ======= Values Section ======= -->
     @include('web.partials.value')
+    
+    <!-- ======= Counts Section ======= -->
+    @include('web.partials.count')
+   
+    <!-- ====== Clients Section ======= -->
+    {{-- @include('web.partials.client') --}}
+
+    <!-- ===== Services Section ======= -->
+    @include('web.partials.service')
+
+    <!-- ===== Downloads Section ======= -->
+    @include('web.partials.download')
+    
     <!-- === Testimonials Section ===== -->
     @include('web.partials.testimonial')
-    <!-- ====== Team Section ========== -->
-    @include('web.partials.team')
+   
     <!-- ==== Recent Work Section ===== -->
     @include('web.partials.recent')
+
     <!-- ====== Contact Section ======= -->
     @include('web.partials.contact')
 
@@ -75,19 +86,17 @@
  <!-- Bootstrap 4 -->
 <script src="{{ asset('js/app.js') }}" defer></script>
 
-<script src="assets/web1/vendor/jquery.easing/jquery.easing.min.js"></script>
-<script src="assets/web1/vendor/php-email-form/validate.js"></script>
-<script src="assets/web1/vendor/jquery-sticky/jquery.sticky.js"></script>
-<script src="assets/web1/vendor/waypoints/jquery.waypoints.min.js"></script>
-<script src="assets/web1/vendor/counterup/counterup.min.js"></script>
-<script src="assets/web1/vendor/venobox/venobox.min.js"></script>
-<script src="assets/web1/vendor/owl.carousel/owl.carousel.min.js"></script>
-<script src="assets/web1/vendor/isotope-layout/isotope.pkgd.min.js"></script>
-<script src="assets/web1/vendor/aos/aos.js"></script>
-
-
-  <!-- Template Main JS File -->
-  <script src="assets/web1/js/main.js"></script>
+<script src="{{ asset('assets/web1/vendor/jquery.easing/jquery.easing.min.js') }}"></script>
+<script src="{{ asset('assets/web1/vendor/php-email-form/validate.js') }}"></script>
+<script src="{{ asset('assets/web1/vendor/jquery-sticky/jquery.sticky.js') }}"></script>
+<script src="{{ asset('assets/web1/vendor/waypoints/jquery.waypoints.min.js') }}"></script>
+<script src="{{ asset('assets/web1/vendor/counterup/counterup.min.js') }}"></script>
+<script src="{{ asset('assets/web1/vendor/venobox/venobox.min.js') }}"></script>
+<script src="{{ asset('assets/web1/vendor/owl.carousel/owl.carousel.min.js') }}"></script>
+<script src="{{ asset('assets/web1/vendor/isotope-layout/isotope.pkgd.min.js') }}"></script>
+<script src="{{ asset('assets/web1/vendor/aos/aos.js') }}"></script>
+<!-- Template Main JS File -->
+<script src="{{ asset('assets/web1/js/main.js') }}"></script>
 
 </body>
 

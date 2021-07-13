@@ -1,8 +1,6 @@
 <section id="counts" class="counts">
     <div class="container">
-
       <div class="row no-gutters">
-
         <div class="col-lg-3 col-md-6 d-md-flex align-items-md-stretch">
           <div class="count-box">
             <i class="icofont-simple-smile"></i>

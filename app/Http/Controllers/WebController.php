@@ -15,5 +15,13 @@ class WebController extends Controller
     {
         return view('web.pages.about.about');
     }
+    public function blog_index()
+    {
+        return view('web.pages.blog.index');
+    }
+    public function blog_detail($id)
+    {
+        return view('web.pages.blog.blog_detail');
+    }
 
 }

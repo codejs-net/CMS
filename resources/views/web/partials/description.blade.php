@@ -4,14 +4,12 @@
       <div class="row">
         <div class="col-xl-4 col-lg-5" data-aos="fade-up">
           <div class="content">
-            <h3>{{__('descript1-heading')}}</h3>
-            <p>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-              Asperiores dolores sed et. Tenetur quia eos. Autem tempore quibusdam vel necessitatibus optio ad corporis.
-            </p>
+            <h3>{{__('descript-heading')}}</h3>
+            <p>{{__('descript-message')}}</p>
             <div class="text-center">
-              <a href="#" class="more-btn">Learn More <i class="bx bx-chevron-right"></i></a>
+              <a href="#" class="more-btn">More <i class="bx bx-chevron-right"></i></a>
             </div>
+            <br><br>
           </div>
         </div>
         <div class="col-xl-8 col-lg-7 d-flex">

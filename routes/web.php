@@ -22,7 +22,8 @@ Route::resource('lmslogin', LoginController::class);
 Route::get('/', [WebController::class, 'index'])->name('/');
 Route::get('home', [WebController::class, 'index'])->name('home');
 Route::get('about', [WebController::class, 'about'])->name('about');
-
+Route::get('blog', [WebController::class, 'blog_index'])->name('blog');
+Route::get('blog_detail/{id}', [WebController::class, 'blog_detail'])->name('blog_detail');
 
 
 Route::group(['middleware' => ['auth']], function() {

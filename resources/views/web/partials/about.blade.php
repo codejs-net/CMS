@@ -37,4 +37,6 @@
       </div>
 
     </div>
+    
   </section><!-- End About Section -->
+  <hr>
