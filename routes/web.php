@@ -16,7 +16,8 @@ use App\Http\Controllers\SettingController;
 Auth::routes();
 
 Route::get('lang/{locale}', [LocalizationController::class, 'index'])->name('lang');
-Route::resource('lmslogin', LoginController::class);
+// Route::resource('login', LoginController::class);
+// Route::get('login', [LoginController::class, 'index'])->name('login');
 
 // --------Web--------------------------------
 Route::get('/', [WebController::class, 'index'])->name('/');

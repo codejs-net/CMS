@@ -47,16 +47,16 @@ class LoginController extends Controller
         $this->middleware('guest')->except('logout');
     }
 
-    public function showLoginForm()
-    {
-        $locale = session()->get('locale');
-        if(empty($locale))
-        {
-            Session::put('locale', 'si');
-        }
-        return redirect()->route('lmslogin.index');
+    // public function showLoginForm()
+    // {
+    //     $locale = session()->get('locale');
+    //     if(empty($locale))
+    //     {
+    //         Session::put('locale', 'si');
+    //     }
+    //     return redirect()->route('lmslogin.index');
         
-    }
+    // }
 
     public function index()
     {
@@ -94,11 +94,11 @@ class LoginController extends Controller
             // ->createdAt(now()->subDays(10))
             // ->log('edited');
 
-            activity()->log('login');
-            return redirect()->route('home');
+            // activity()->log('login');
+            return redirect()->route('cms-admin');
 
         }else{
-            return redirect()->route('lmslogin.index')
+            return redirect()->route('login')
                 ->with('error','Email-Address And Password Are Wrong.');
         }
           

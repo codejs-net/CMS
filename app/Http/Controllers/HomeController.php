@@ -33,7 +33,7 @@ class HomeController extends Controller
     {
         $user = session()->get('user');
         // dd($user->username);
-        return view('home.index');
+        return view('app.home.index');
 
     }
 

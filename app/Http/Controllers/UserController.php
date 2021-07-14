@@ -67,7 +67,7 @@ class UserController extends Controller
 
         $userdata = User::select('*')->get();
 
-        return view('users.index',compact('userdata'));
+        return view('app.users.index',compact('userdata'));
     
     }
     
@@ -79,7 +79,7 @@ class UserController extends Controller
     public function create_users()
     {
         $roles=Role::all();
-        return view('users.create',compact('roles'));
+        return view('app.users.create',compact('roles'));
     }
     
     public function store_users(Request $request)
@@ -149,7 +149,7 @@ class UserController extends Controller
     public function show_users($id)
     {
         $user = User::find($id);
-        return view('users.show',compact('user'));
+        return view('app.users.show',compact('user'));
     }
     
     /**
@@ -164,7 +164,7 @@ class UserController extends Controller
         $userRole = $user->roles->pluck('id')->first();
         $roles=Role::all();
     
-        return view('users.edit',compact('user','roles','userRole'));
+        return view('app.users.edit',compact('user','roles','userRole'));
     }
     
     /**

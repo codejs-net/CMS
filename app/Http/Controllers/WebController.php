@@ -8,7 +8,7 @@ class WebController extends Controller
 {
     public function index()
     {
-        return view('web.index');
+        return view('web.template.agency1.index');
     }
 
     public function about()
