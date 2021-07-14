@@ -1,11 +1,11 @@
 :root {
-    --light: #fdb9a2;
-    --dark: #e04b06;
-    --color: #ff5821;
-    --hover: #ff7e54;
-    --background: #f85b26;
-    --shadow: #ff774a;
-    --active: #fd7e14;
+    --light: #f58db0;
+    --dark: #bb154d;
+    --color: #f8598e;
+    --hover: #e4457a;
+    --background: #f03574;
+    --shadow: #f37ba3;
+    --active: #c94672;
   }
 /*--------------------------------------------------------------
 # General

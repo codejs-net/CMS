@@ -10,11 +10,11 @@
       <div class="carousel-item active" style="background-image: url(assets/img/slide/slide-1.jpg)">
         <div class="carousel-container">
           <div class="container">
-            <h2 class="animate__animated animate__fadeInDown">Welcome to <span>Sailor</span></h2>
-            <p class="animate__animated animate__fadeInUp">Ut velit est quam dolor ad a aliquid qui aliquid. Sequi ea ut et est quaerat sequi nihil ut aliquam. Occaecati alias dolorem mollitia ut. Similique ea voluptatem. Esse doloremque accusamus repellendus deleniti vel. Minus et tempore modi architecto.</p>
+            <h2 class="animate__animated animate__fadeInDown">{{__('Slider-heading1')}}</h2>
+            <p class="animate__animated animate__fadeInUp">{{__('Slider-description1')}}</p>
             <div class="d-flex align-items-center">
               <i class="bx bxs-right-arrow-alt get-started-icon animate__animated animate__fadeInUp scrollto"></i>
-              <a href="#about" class="btn-get-started animate__animated animate__fadeInUp scrollto">Get Started</a>
+              <a href="#about" class="btn-get-started animate__animated animate__fadeInUp scrollto">{{__('Get Started')}}</a>
             </div>
           </div>
         </div>
@@ -24,11 +24,11 @@
       <div class="carousel-item" style="background-image: url(assets/img/slide/slide-2.jpg)">
         <div class="carousel-container">
           <div class="container">
-            <h2 class="animate__animated animate__fadeInDown">Lorem Ipsum Dolor</h2>
-            <p class="animate__animated animate__fadeInUp">Ut velit est quam dolor ad a aliquid qui aliquid. Sequi ea ut et est quaerat sequi nihil ut aliquam. Occaecati alias dolorem mollitia ut. Similique ea voluptatem. Esse doloremque accusamus repellendus deleniti vel. Minus et tempore modi architecto.</p>
+            <h2 class="animate__animated animate__fadeInDown">{{__('Slider-heading2')}}</h2>
+            <p class="animate__animated animate__fadeInUp">{{__('Slider-description2')}}</p>
             <div class="d-flex align-items-center">
               <i class="bx bxs-right-arrow-alt get-started-icon animate__animated animate__fadeInUp scrollto"></i>
-              <a href="#about" class="btn-get-started animate__animated animate__fadeInUp scrollto">Get Started</a>
+              <a href="#about" class="btn-get-started animate__animated animate__fadeInUp scrollto">{{__('Get Started')}}</a>
             </div>
           </div>
         </div>
@@ -38,11 +38,11 @@
       <div class="carousel-item" style="background-image: url(assets/img/slide/slide-3.jpg)">
         <div class="carousel-container">
           <div class="container">
-            <h2 class="animate__animated animate__fadeInDown">Sequi ea ut et est quaerat</h2>
-            <p class="animate__animated animate__fadeInUp">Ut velit est quam dolor ad a aliquid qui aliquid. Sequi ea ut et est quaerat sequi nihil ut aliquam. Occaecati alias dolorem mollitia ut. Similique ea voluptatem. Esse doloremque accusamus repellendus deleniti vel. Minus et tempore modi architecto.</p>
+            <h2 class="animate__animated animate__fadeInDown">{{__('Slider-heading3')}}</h2>
+            <p class="animate__animated animate__fadeInUp">{{__('Slider-description3')}}</p>
             <div class="d-flex align-items-center">
               <i class="bx bxs-right-arrow-alt get-started-icon animate__animated animate__fadeInUp scrollto"></i>
-              <a href="#about" class="btn-get-started animate__animated animate__fadeInUp scrollto">Get Started</a>
+              <a href="#about" class="btn-get-started animate__animated animate__fadeInUp scrollto">{{__('Get Started')}}</a>
             </div>
           </div>
         </div>

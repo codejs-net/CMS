@@ -28,6 +28,7 @@
   <link href="{{ asset('assets/vendor/animate.css/animate.min.css') }}" rel="stylesheet">
   <!-- Template Main CSS File -->
   <link href="{{ asset('assets/css/style.css') }}" rel="stylesheet">
+  <link href="{{ asset('assets/css/theme/pink.css') }}" rel="stylesheet">
 
 
 </head>

@@ -6,7 +6,7 @@ $locale = session()->get('locale');
     <div class="container-fluid d-flex">
 
       <div class="logo mr-auto">
-       <a href="index.html"> <img src="{{asset('assets/img/logo.png')}}" alt="code-JS" class="img-fluid"></a>
+       <a href="index.html"> <img src="{{asset('assets/img/logo-pink.png')}}" alt="code-JS" class="img-fluid"></a>
         <!-- Uncomment below if you prefer to use an image logo -->
         <!-- <a href="index.html"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>-->
       </div>

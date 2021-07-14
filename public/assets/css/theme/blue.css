@@ -1,0 +1,482 @@
+:root {
+    --light: #8abdf7;
+    --dark: #191bc2;
+    --color: #4484ce;
+    --hover: #4e9cf5;
+    --background: #3861d3;
+    --shadow: #3e8be4;
+    --active: #2f67a7;
+  }
+/*--------------------------------------------------------------
+# General
+--------------------------------------------------------------*/
+
+  a {
+    color: var(--color);
+  }
+  
+  a:hover {
+    color: var(--hover);
+  }
+  
+
+  /*--------------------------------------------------------------
+  # Back to top button
+  --------------------------------------------------------------*/
+  .back-to-top {
+    background: var(--background);
+    color: #fff;
+  }
+  
+  .back-to-top:hover {
+    color: #fff;
+    background: var(--hover);
+  }
+  
+  /*--------------------------------------------------------------
+  # Top Bar
+  --------------------------------------------------------------*/
+  #topbar {
+    background: #39312f;
+    color: rgba(255, 255, 255, 0.8);
+  }
+  
+  #topbar .contact-info i {
+    color: var(--color);
+  }
+  
+  #topbar .cta a {
+    color: #fff;
+    background: var(--background);
+  }
+  
+  #topbar .cta a:hover {
+    background: var(--hover);
+  }
+  
+  /*--------------------------------------------------------------
+  # Header
+  --------------------------------------------------------------*/
+ 
+
+  
+  /*--------------------------------------------------------------
+  # Navigation Menu
+  --------------------------------------------------------------*/
+  /* Desktop Navigation */
+  
+  
+  .nav-menu a:hover, .nav-menu .active > a, .nav-menu li:hover > a {
+    color: var(--color);
+  }
+  
+  
+  .nav-menu .drop-down ul a:hover, .nav-menu .drop-down ul .active > a, .nav-menu .drop-down ul li:hover > a {
+    color: var(--color);
+  }
+  
+  
+  
+  .mobile-nav-toggle i {
+    color: var(--color);
+  }
+  
+  
+  .mobile-nav a:hover, .mobile-nav .active > a, .mobile-nav li:hover > a {
+    color: var(--color);
+  }
+  
+  #hero .carousel-indicators li.active {
+    opacity: 1;
+    background: var(--active);
+  }
+  
+  #hero .get-started-icon {
+    background: var(--background);
+  }
+  
+  
+  #hero .btn-get-started:hover {
+    background: var(--hover);
+  }
+  
+ 
+  
+  .why-us .content {
+
+    background: var(--background);
+  }
+ 
+  .why-us  .more-btn:hover {
+    color: var(--color);
+    background: #fff;
+  }
+  
+  .why-us  .more-link{
+    color: var(--color);
+  }
+  .why-us  .more-link:hover {
+    color: #fff;
+    background: var(--background);
+  }
+  
+  
+  
+  
+  .why-us .icon-boxes .icon-box i {
+    font-size: 40px;
+    color: var(--color);
+    margin-bottom: 30px;
+  }
+  
+  
+  /*--------------------------------------------------------------
+  # About
+  --------------------------------------------------------------*/
+ 
+  
+  .about .icon-box .icon i {
+    color: var(--color);
+    font-size: 32px;
+  }
+  
+  .about .icon-box:hover .icon {
+    background: var(--background);
+    border-color: var(--dark);
+  }
+  
+  
+  .about .icon-box .title a:hover {
+    color: var(--color);
+  }
+ 
+  .about .play-btn {
+    width: 94px;
+    height: 94px;
+    background: radial-gradient(var(--color) 50%, rgba(255, 88, 33, 0.4) 52%);
+  }
+  
+ 
+  .about .play-btn::before {
+   
+    border: 5px solid var(--dark);
+ 
+  }
+  
+  .about .play-btn:hover::after {
+    border-left: 15px solid var(--color);
+    transform: scale(20);
+  }
+  
+ 
+  .counts .count-box i {
+    display: block;
+    font-size: 30px;
+    color: var(--light);
+    float: left;
+  }
+  
+  
+  
+  .clients .owl-dot.active {
+    background-color: var(--color) !important;
+  }
+  
+  
+  
+  .services .icon {
+    background: var(--color);
+  }
+  
+ 
+  
+  .services .icon-box:hover .icon {
+    background: #fff;
+    border: 2px solid var(--color);
+  }
+  
+  .services .icon-box:hover .icon i {
+    color: var(--color);
+  }
+  
+  .services .icon-box:hover .title a {
+    color: var(--color);
+  }
+  
+ 
+  
+  .values .card:hover .card-body {
+    background: var(--color);
+  }
+  
+ 
+  /*--------------------------------------------------------------
+  # Testimonials
+  --------------------------------------------------------------*/
+ 
+  
+  .testimonials .owl-dot.active {
+    background-color: var(--color) !important;
+  }
+  
+ 
+  
+  .portfolio #portfolio-flters li:hover, .portfolio #portfolio-flters li.filter-active {
+    color: var(--color);
+    background: #fff1ed;
+  }
+  
+  
+  .portfolio .portfolio-item .portfolio-info .preview-link:hover, .portfolio .portfolio-item .portfolio-info .details-link:hover {
+    color: var(--color);
+  }
+  
+  
+  .portfolio .portfolio-item .portfolio-links a:hover {
+    color: var(--light)
+  }
+  
+  
+  .portfolio-details .portfolio-details-carousel .owl-dot.active {
+    background-color: var(--color)
+  }
+  
+  .team .member .social a:hover {
+    color: var(--color);
+  }
+  
+  
+  
+  #team .more-icon {
+    font-size: 18px;
+    background: var(--color);
+  }
+  
+  /*--------------------------------------------------------------
+  # Download
+  --------------------------------------------------------------*/
+  
+  .download .icon-box:hover h4 a {
+    color: var(--dark);
+  }
+  .download .icon-box-pink .icon i {
+    color: #ff689b;
+  }
+  
+  .download .icon-box-cyan .icon i {
+    color: #3fcdc7;
+  }
+  
+  .download .icon-box-green .icon i {
+    color: #41cf2e;
+  }
+  
+  .download .icon-box-blue .icon i {
+    color: #2282ff;
+  }
+  
+  /*--------------------------------------------------------------
+  
+  # Pricing
+  --------------------------------------------------------------*/
+ 
+  
+  .pricing h4 {
+    font-size: 36px;
+    color: var(--color);
+  }
+  
+ 
+  
+  .pricing ul i {
+    color: var(--color);
+    font-size: 18px;
+    padding-right: 4px;
+  }
+  
+  .pricing .featured h3 {
+    color: #fff;
+    background: var(--background);
+    box-shadow: 0 3px 7px var(--shadow);
+  }
+  
+  .pricing .btn-buy:hover {
+    background: var(--hover)
+  }
+  
+  .pricing .advanced {
+    background: var(--color);
+    color: #fff;
+  }
+  
+  /*--------------------------------------------------------------
+  # F.A.Q
+  --------------------------------------------------------------*/
+ 
+  .faq .faq-list .icon-help {
+    color: var(--light)
+  }
+  
+  
+  .faq .faq-list a.collapsed {
+    color: #343a40;
+  }
+  
+  .faq .faq-list a.collapsed:hover {
+    color: var(--color);
+  }
+  
+  
+  .contact .info-box i {
+    font-size: 32px;
+    color: var(--color);
+   
+  }
+  
+ 
+  
+  .contact .php-email-form input::focus, .contact .php-email-form textarea::focus {
+    background-color: var(--color);
+  }
+  
+ 
+  
+  .contact .php-email-form button[type="submit"] {
+    background: var(--color);
+  
+  }
+  
+  .contact .php-email-form button[type="submit"]:hover {
+    background: var(--hover)
+  }
+  
+  
+  
+  .blog .entry .entry-title a:hover {
+    color: var(--color);
+  }
+  
+ 
+  
+  .blog .entry .entry-content .read-more a {
+    display: inline-block;
+    background: var(--color);
+    color: #fff;
+    padding: 6px 20px;
+    transition: 0.3s;
+    font-size: 14px;
+  }
+  
+  .blog .entry .entry-content .read-more a:hover {
+    background: var(--shadow)
+  }
+  
+  
+  
+  .blog .entry .entry-footer a:hover {
+    color: var(--color);
+  }
+  
+  
+  
+  .blog .blog-comments .comment h5 a:hover {
+    color: var(--color);
+  }
+  
+ 
+  
+  .blog .blog-comments .reply-form input:focus {
+    box-shadow: none;
+    border-color: var(--hover)
+  }
+  
+  
+  .blog .blog-comments .reply-form textarea:focus {
+    box-shadow: none;
+    border-color: var(--hover)
+  }
+  
+  
+  .blog .blog-comments .reply-form .btn-primary:hover {
+    background-color: var(--color);
+  }
+  
+  
+  
+  .blog .blog-pagination li.active, .blog .blog-pagination li:hover {
+    background: var(--color);
+    border: 1px solid var(--color);
+  }
+  
+  
+  
+  .blog .sidebar .categories ul a:hover {
+    color: var(--color);
+  }
+  
+ 
+  
+  .blog .sidebar .recent-posts h4 a:hover {
+    color: var(--color);
+  }
+  
+ 
+  
+  .blog .sidebar .tags ul a:hover {
+    color: #fff;
+    border: 1px solid var(--color);
+    background: var(--color);
+  }
+  
+ 
+  
+  #footer .footer-top .footer-links ul i {
+    padding-right: 2px;
+    color: var(--hover);
+    font-size: 18px;
+    line-height: 1;
+  }
+  
+ 
+  
+  #footer .footer-top .footer-links ul a:hover {
+    text-decoration: none;
+    color: var(--color);
+  }
+  
+ 
+  #footer .footer-newsletter form input[type="submit"] {
+    background: var(--color);
+    color: #fff;
+  }
+  
+  #footer .footer-newsletter form input[type="submit"]:hover {
+    background: var(--dark)
+  }
+  
+  #footer .credits {
+    color: #313030;
+  }
+  
+  #footer .social-links a {
+    background: var(--color);
+  }
+  
+  #footer .social-links a:hover {
+    background: var(--hover)
+  }
+  
+  
+  .btn-read-more a {
+    background: var(--color);
+  }
+  
+  .btn-read-more a:hover {
+    background: var(--background)
+  }
+  
+  
+  .btn-more-detail{
+    background-color: var(--background)
+  }
+  
