@@ -4,7 +4,7 @@
       <h2>{{__('Sabaragamuwa Provincial Council')}}</h2>
       <div class="d-flex align-items-center">
         <i class="bx bxs-right-arrow-alt get-started-icon"></i>
-        <a href="#about" class="btn-get-started scrollto">{{trans('Get Started')}}</a>
+        <a href="#" class="btn-get-started scrollto">{{trans('Get Started')}}</a>
       </div>
     </div>
   </section><!-- End Hero -->

@@ -363,17 +363,18 @@ h1, h2, h3, h4, h5, h6 {
 #hero {
   width: 100%;
   height: 60vh;
-  background: url("../../img/hero-bg.jpg") center center;
+  background: url("../../img/hero-bg3.jpg") center center;
   background-size: cover;
   position: relative;
   z-index: 1;
   padding: 0;
   margin-bottom: -120px;
+  opacity: 1;
 }
 
 #hero:before {
   content: "";
-  background: rgba(0, 0, 0, 0.4);
+  background: rgba(8, 8, 8, 0.4);
   position: absolute;
   bottom: 0;
   top: 0;
@@ -390,12 +391,12 @@ h1, h2, h3, h4, h5, h6 {
   font-size: 48px;
   font-weight: 700;
   line-height: 56px;
-  color: #fff;
+  color: rgb(255, 255, 255);
 }
 
 #hero h2 {
-  color: #eee;
-  margin-bottom: 50px;
+  color: rgb(252, 250, 249);
+  margin-bottom: 20px;
   font-size: 24px;
 }
 
@@ -554,7 +555,7 @@ section {
   margin-bottom: 30px;
 }
 
-.why-us .content .more-btn {
+.why-us  .more-btn {
   display: inline-block;
   background: rgba(255, 255, 255, 0.2);
   padding: 6px 30px 8px 30px;
@@ -563,21 +564,38 @@ section {
   transition: all ease-in-out 0.4s;
 }
 
-.why-us .content .more-btn i {
+.why-us .more-btn i {
   font-size: 14px;
 }
 
-.why-us .content .more-btn:hover {
+.why-us  .more-btn:hover {
   color: #ff5821;
   background: #fff;
 }
+
+.why-us  .more-link{
+  padding-left: 10px;
+  padding-right: 10px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  border-radius: 18px;
+  color: #ff5821;
+  background: #fff;
+}
+.why-us  .more-link:hover {
+  color: #fff;
+  background: #ff5821;
+  transition: 600;
+  transition-duration: 500ms;
+}
+
 
 .why-us .icon-boxes .icon-box {
   text-align: center;
   border-radius: 10px;
   background: #fff;
   box-shadow: 0px 2px 15px rgba(0, 0, 0, 0.1);
-  padding: 40px 30px;
+  padding: 20px 20px;
   width: 100%;
 }
 
@@ -1352,6 +1370,18 @@ section {
 
 .team .member:hover .social {
   opacity: 1;
+}
+
+#team .more-icon {
+  font-size: 18px;
+  background: #ff5821;
+  margin-top: 10px;
+  padding: 8px;
+  color: #fff;
+  border-radius: 50px;
+  position: relative;
+  z-index: 5;
+  box-shadow: 10px 2px 15px rgba(0, 0, 0, 0.1);
 }
 
 /*--------------------------------------------------------------
@@ -2452,4 +2482,10 @@ section {
 .dropdown-menu{
   position: absolute !important;
   overflow: hidden !important;
+}
+
+.btn-more-detail{
+  background-color: #ff774a;
+  padding: 5px;
+  border-radius: 5px;
 }
