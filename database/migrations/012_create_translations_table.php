@@ -15,11 +15,11 @@ class CreateTranslationsTable extends Migration
     {
         Schema::create('translations', function (Blueprint $table) {
             $table->id();
-            $table->string('category')->nullable();
+            $table->string('section')->nullable();
             $table->string('key')->nullable();
-            $table->string('string_en')->nullable();
-            $table->string('string_si')->nullable();
-            $table->string('string_ta')->nullable();
+            $table->longText('string_en')->nullable();
+            $table->longText('string_si')->nullable();
+            $table->longText('string_ta')->nullable();
             $table->timestamps();
         });
     }

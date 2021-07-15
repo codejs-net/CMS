@@ -4,10 +4,19 @@ namespace App\Http\Controllers\Web;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use App\Models\translation;
 
 class TranslationController extends Controller
 {
     public function index(Request $request)
+    {
+        $transdata = translation::select('*')->get();
+        // $transdata = translation::select('*')->paginate(20);
+        return view('app.translation.index',compact('transdata'));
+    
+    }
+
+    public function update_tranlation(Request $request)
     {
     // Read Files
     $jsonStrings_en = file_get_contents(base_path('resources/lang/en.json'));
@@ -33,17 +42,42 @@ class TranslationController extends Controller
     
     }
 
-    public function import_json(Request $request)
+    public function import_translation(Request $request)
     {
         $jsonStrings_en = file_get_contents(base_path('resources/lang/en.json'));
         $jsonStrings_si = file_get_contents(base_path('resources/lang/si.json'));
         $jsonStrings_ta = file_get_contents(base_path('resources/lang/ta.json'));
     
         $data_en = json_decode($jsonStrings_en, true);
-        $data_si = json_decode($jsonStrings_en, true);
-        $data_ta = json_decode($jsonStrings_en, true);
+        $data_si = json_decode($jsonStrings_si, true);
+        $data_ta = json_decode($jsonStrings_ta, true);
 
+        // $tran= new translation;
         
+        foreach($data_en as $key => $item)
+        {
+            $section=explode("-",$key);
+            $string_en=$item;
+            $string_si="";
+            $string_ta="";
+            
+            if (array_key_exists($key,$data_si))
+            { $string_si=$data_si[$key];}
+
+            if (array_key_exists($key,$data_ta))
+            { $string_ta=$data_ta[$key];}
+
+            $import_data = array(
+                'section'   =>  $section[0],
+                'key'       =>  $key,
+                'string_en' =>  $string_en, 
+                'string_si' =>  $string_si, 
+                'string_ta' =>  $string_ta, 
+            );
+            translation::create($import_data);
+        }
+        return redirect()->route('translation.index')
+        ->with('success','Tranlation Strings Import successfully from Json Files');
 
     }
 }
