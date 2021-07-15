@@ -9,6 +9,8 @@ use App\Http\Controllers\UserController;
 use App\Http\Controllers\SoapController;
 use App\Http\Controllers\LocalizationController;
 use App\Http\Controllers\SettingController;
+use App\Http\Controllers\Web\TranslationController;
+
 
 
 
@@ -26,8 +28,10 @@ Route::get('about', [WebController::class, 'about'])->name('about');
 Route::get('blog', [WebController::class, 'blog_index'])->name('blog');
 Route::get('blog_detail/{id}', [WebController::class, 'blog_detail'])->name('blog_detail');
 
-
 Route::group(['middleware' => ['auth']], function() {
+
+    // --------CMS---------------------------------
+    Route::resource('translation', TranslationController::class);
 
     // --------Home--------------------------------
     Route::get('cms-admin', [HomeController::class, 'index'])->name('cms-admin');

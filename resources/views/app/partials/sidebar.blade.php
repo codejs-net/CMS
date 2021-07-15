@@ -170,7 +170,25 @@
                     </li>
                     @endcan
                    
-                   
+                    <li class="nav-item has-treeview">
+                        <a href="#" class="nav-link">
+                            <i class="nav-icon fa fa-database"></i>
+                            <p>
+                            {{__('Translations')}}
+                                <i class="right fas fa-angle-left"></i>
+                            </p>
+                        </a>
+                        <ul class="nav nav-treeview">
+
+                            <li class="nav-item">
+                                <a href="{{ route('translation.index') }}" class="nav-link">
+                                    <i class="far fa-circle nav-icon"></i>
+                                    <p>{{__('Translations')}}</p>
+                                </a>
+                            </li>
+ 
+                        </ul>
+                    </li>
 
 
                     <li class="nav-header"></li>
