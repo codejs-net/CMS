@@ -30,7 +30,7 @@ $name="name".$lang;
 <div class="container-fulid">
     <div class="px-2">
         <div class="card card-body">
-            <table class="table table-hover" id="tbl_user">
+            <table class="table table-hover" id="tbl_trans">
                 <thead>
                 <tr>
                 <th>No</th>
@@ -44,12 +44,12 @@ $name="name".$lang;
                 <tbody>
                 @foreach ($transdata as $key => $data)
                     <tr>
-                        <td>{{ $data->id }}</td>
-                        <td>{{ $data->section }}</td>
-                        <td>{{ $data->key }}</td>
-                        <td><textarea class="form-control text_en" rows="3">{{ $data->string_en }}</textarea></td>
-                        <td><textarea class="form-control text_si" rows="3">{{ $data->string_si }}</textarea></td>
-                        <td><textarea class="form-control text_ta" rows="3">{{ $data->string_ta }}</textarea></td>
+                        <td class="trans_id">{{ $data->id }}</td>
+                        <td class="trans_section">{{ $data->section }}</td>
+                        <td class="trans_key">{{ $data->key }}</td>
+                        <td><textarea class="form-control trans_en" rows="3">{{ $data->string_en }}</textarea></td>
+                        <td><textarea class="form-control trans_si" rows="3">{{ $data->string_si }}</textarea></td>
+                        <td><textarea class="form-control trans_ta" rows="3">{{ $data->string_ta }}</textarea></td>
                     </tr> 
                 @endforeach
                 </tbody>
@@ -57,7 +57,7 @@ $name="name".$lang;
             {{-- {!! $transdata->render( "pagination::bootstrap-4") !!}  --}}
         </div>
         <div class="box-footer clearfix pull-right">    
-            <button type="button" class="btn btn-success btn-sm ml-2" id="btn_update"><i class="fa fa-check" aria-hidden="true"></i> {{ __("Update")}}</button>
+            <button type="button" class="btn btn-success btn-sm ml-2" id="btn_update"><i class="fa fa-floppy-o"></i> {{__('Update')}}&nbsp;<span class="spinner-border spinner-border-sm text-white" role="status" aria-hidden="true"  style="display: none;" id='loader'></span></button>
             <button type="button" class="btn btn-info btn-sm ml-2" id="btn_publish"><i class="fa fa-check" aria-hidden="true"></i> {{ __("Publish")}}</button>
         </div>
     </div>
@@ -66,69 +66,59 @@ $name="name".$lang;
 <br><br>
 @endsection
 
+@section('script')
 <script>
-    $('#return_resource').on("click",function(){
-
-                var return_data = [];
-                var lend_id, reso_id, type,accno,snumber;
-
-
-                $('#returnTable tbody tr').each(function(){
-                    lend_id = $(this).find(".td_id").html();
-                    reso_id = $(this).find(".td_reso_id").html();
-                    type = $(this).find(".td_type").html();
-                
-
-                    return_data.push({
-                        lend_id: lend_id,
-                        reso_id: reso_id,
-                        type:type,
-                        });
-                });
+    $('#btn_update').on("click",function(){
+        var transdata = [];
+        var id,section,key,string_en,string_si,string_ta;
         
-                $.ajaxSetup({
-                headers: {'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')}});
-                $.ajax({
-                    type: 'POST',
-                    dataType : 'json',
-                    // async:false,
-                    data: {
-                    'lend_data':JSON.stringify(lend_data),
-                    'return_data':JSON.stringify(return_data)
-                    },
-                    url: "{{route('return.store')}}",
-                    beforeSend: function(){
-                        $("#loader").show();
-                    },
-                    success: function(data){  
-                        if(data.status=="success")
-                        {
-                            toastr.success('Return Processe Successfuly Completed'); 
-                            if(reso_extend==true){$('#div_extend').show();}
-                            if($("#check_print").prop("checked") == true)
-                            {
-                                $("#print_table_return tbody").append(data.print_r);
-                                $("#print_table_issue tbody").append(data.print_i);
-                                $("#print_member").html(membername);
-                                $("#print_returndate").html(dtereturn);
-                                $("#print_issuedate").html(dtereturn);
-                                $("#print_tobe_return").html(data.tobe_return);
-                               
-                                print_div($("#print_lendding").html());
-                            }
-                            memberSelect(mem_id);
-                            viewState=0;
-                        }
-                        
-                    },
-                    error: function(data){
-                        toastr.error('Processe Faild'); 
-                    },
-                    complete:function(data){
-                    $("#loader").hide();
-                    }
+        $('#tbl_trans tbody tr').each(function(){
+            id = $(this).find(".trans_id").html();
+            section = $(this).find(".trans_section").html();
+            key = $(this).find(".trans_key").html();
+            string_en = $(this).find(".trans_en").val();
+            string_si = $(this).find(".trans_si").val();
+            string_ta = $(this).find(".trans_ta").val();
+        
+            transdata.push({
+                id: id,
+                section: section,
+                key:key,
+                string_en:string_en,
+                string_si:string_si,
+                string_ta:string_ta,
                 });
+        });
+
+        $.ajaxSetup({
+        headers: {'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')}});
+        $.ajax({
+            type: 'POST',
+            dataType : 'json',
+            // async:false,
+            data: {
+            'transdata':JSON.stringify(transdata)
+            },
+            url: "{{route('translation.store')}}",
+            beforeSend: function(){
+                $("#loader").show();
+            },
+            success: function(data){  
+                if(data.status=="success")
+                {
+                    console.log(data.data);
+                    toastr.success('Update Processe Successfuly Completed'); 
+                }   
+            },
+            error: function(data){
+                toastr.error('Processe Faild'); 
+            },
+            complete:function(data){
+            $("#loader").hide();
+            }
+        });
 
 
     });
 </script>
+@endsection

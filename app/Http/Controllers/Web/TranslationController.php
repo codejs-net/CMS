@@ -16,6 +16,27 @@ class TranslationController extends Controller
     
     }
 
+    public function store(Request $request)
+    {
+        $trans_data=json_decode($request->get('transdata'));
+        foreach($trans_data as $item)
+        {
+            $row=translation::find($item->id);
+            if($row)
+            {
+                // $row->section=$item->section;
+                // $row->key=$item->key;
+                $row->string_en=$item->string_en;
+                $row->string_si=$item->string_si;
+                $row->string_ta=$item->string_ta;
+                $row->save();
+                error_log($item->string_si);
+            }
+        }
+
+        return response()->json(['status' => "success",'data'=>$trans_data]);
+    }
+
     public function update_tranlation(Request $request)
     {
     // Read Files
