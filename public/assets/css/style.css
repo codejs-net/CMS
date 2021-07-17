@@ -17,6 +17,12 @@ h1, h2, h3, h4, h5, h6 {
   font-family: "Raleway", sans-serif;
 }
 
+.custom-control-label::before, 
+.custom-control-label::after {
+  top: 2rem;
+  width: 1.5rem;
+  height: 1.5rem;
+}
 /*--------------------------------------------------------------
 # Back to top button
 --------------------------------------------------------------*/

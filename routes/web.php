@@ -37,6 +37,8 @@ Route::group(['middleware' => ['auth']], function() {
     Route::get('publish_tranlation', [TranslationController::class, 'publish_tranlation'])->name('publish_tranlation');
 
     Route::resource('navigations', NavigationController::class);
+    Route::POST('add_menu_item', [NavigationController::class, 'add_menu_item'])->name('add_menu_item');
+    Route::get('load_menu_item', [NavigationController::class, 'load_menu_item'])->name('load_menu_item');
 
     // --------Home--------------------------------
     Route::get('cms-admin', [HomeController::class, 'index'])->name('cms-admin');
