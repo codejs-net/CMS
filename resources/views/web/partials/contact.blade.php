@@ -2,8 +2,8 @@
     <div class="container">
 
       <div class="section-title">
-        <h2 data-aos="fade-up">Contact</h2>
-        <p data-aos="fade-up">Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex aliquid fuga eum quidem. Sit sint consectetur velit. Quisquam quos quisquam cupiditate. Et nemo qui impedit suscipit alias ea. Quia fugiat sit in iste officiis commodi quidem hic quas.</p>
+        <h2 data-aos="fade-up">{{__('Contact-heading')}}</h2>
+        <p data-aos="fade-up">{{__('Contact-description')}} </p>
       </div>
 
       <div class="row justify-content-center">
@@ -11,23 +11,23 @@
         <div class="col-xl-3 col-lg-4 mt-4" data-aos="fade-up">
           <div class="info-box">
             <i class="bx bx-map"></i>
-            <h3>Our Address</h3>
-            <p>A108 Adam Street, New York, NY 535022</p>
+            <h3>{{__('Contact-section heading1')}}</h3>
+            <p>{{__('Contact-section description1')}}</p>
           </div>
         </div>
 
         <div class="col-xl-3 col-lg-4 mt-4" data-aos="fade-up" data-aos-delay="100">
           <div class="info-box">
             <i class="bx bx-envelope"></i>
-            <h3>Email Us</h3>
-            <p>info@example.com<br>contact@example.com</p>
+            <h3>{{__('Contact-section heading2')}}</h3>
+            <p>{{__('Contact-section description2')}}</p>
           </div>
         </div>
         <div class="col-xl-3 col-lg-4 mt-4" data-aos="fade-up" data-aos-delay="200">
           <div class="info-box">
             <i class="bx bx-phone-call"></i>
-            <h3>Call Us</h3>
-            <p>+1 5589 55488 55<br>+1 6678 254445 41</p>
+            <h3>{{__('Contact-section heading3')}}</h3>
+            <p>{{__('Contact-section description3')}}</p>
           </div>
         </div>
       </div>
@@ -58,7 +58,7 @@
               <div class="error-message"></div>
               <div class="sent-message">Your message has been sent. Thank you!</div>
             </div>
-            <div class="text-center"><button type="submit">Send Message</button></div>
+            <div class="text-center"><button type="submit">{{__('Contact-send message')}}</button></div>
           </form>
         </div>
 

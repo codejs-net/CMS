@@ -30,14 +30,13 @@ class TranslationController extends Controller
                 $row->string_si=$item->string_si;
                 $row->string_ta=$item->string_ta;
                 $row->save();
-                error_log($item->string_si);
             }
         }
 
         return response()->json(['status' => "success",'data'=>$trans_data]);
     }
 
-    public function update_tranlation(Request $request)
+    public function publish_tranlation(Request $request)
     {
     // Read Files
     $jsonStrings_en = file_get_contents(base_path('resources/lang/en.json'));
@@ -48,18 +47,29 @@ class TranslationController extends Controller
     $data_si = json_decode($jsonStrings_en, true);
     $data_ta = json_decode($jsonStrings_en, true);
 
+    $transdata = translation::select('*')->get();
 
-    dd($data["Slider-heading1"]);
-    // Update Key
-    $data['Slider-heading1'] = "Bulathkohupitiya Pradeshiya Sabha11";
-    // Write File
-    $newJsonString = json_encode($data, JSON_PRETTY_PRINT);
-    file_put_contents(base_path('resources/lang/en.json'), stripslashes($newJsonString));
-    // Get Key Value
+    foreach($transdata as $item)
+    {
+        //en.json
+        $data_en[$item->key] = $item->string_en;
+        //si.json
+        $data_si[$item->key] = $item->string_si;
+        //ta.json
+        $data_ta[$item->key] = $item->string_ta;
+    }
 
-    dd(__('Slider-heading1'));
+    $newJson_en = json_encode($data_en, JSON_PRETTY_PRINT|JSON_UNESCAPED_UNICODE);
+    file_put_contents(base_path('resources/lang/en.json'), stripslashes($newJson_en));
 
-        // return view('app.users.index',compact('userdata'));
+    $newJson_si = json_encode($data_si, JSON_PRETTY_PRINT|JSON_UNESCAPED_UNICODE);
+    file_put_contents(base_path('resources/lang/si.json'), stripslashes($newJson_si));
+
+    $newJson_ta = json_encode($data_ta, JSON_PRETTY_PRINT|JSON_UNESCAPED_UNICODE);
+    file_put_contents(base_path('resources/lang/ta.json'), stripslashes($newJson_ta));
+
+    return redirect()->route('translation.index')
+    ->with('success','Tranlation Published successfully');
     
     }
 
@@ -73,8 +83,8 @@ class TranslationController extends Controller
         $data_si = json_decode($jsonStrings_si, true);
         $data_ta = json_decode($jsonStrings_ta, true);
 
-        // $tran= new translation;
-        
+        translation::query()->truncate();
+
         foreach($data_en as $key => $item)
         {
             $section=explode("-",$key);

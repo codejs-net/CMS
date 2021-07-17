@@ -58,7 +58,7 @@ $name="name".$lang;
         </div>
         <div class="box-footer clearfix pull-right">    
             <button type="button" class="btn btn-success btn-sm ml-2" id="btn_update"><i class="fa fa-floppy-o"></i> {{__('Update')}}&nbsp;<span class="spinner-border spinner-border-sm text-white" role="status" aria-hidden="true"  style="display: none;" id='loader'></span></button>
-            <button type="button" class="btn btn-info btn-sm ml-2" id="btn_publish"><i class="fa fa-check" aria-hidden="true"></i> {{ __("Publish")}}</button>
+            <a href="{{route('publish_tranlation')}}"class="btn btn-info btn-sm ml-2" id="btn_publish"><i class="fa fa-check" aria-hidden="true"></i> {{ __("Publish")}}</a>
         </div>
     </div>
 </div>

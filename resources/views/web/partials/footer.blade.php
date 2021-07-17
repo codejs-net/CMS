@@ -5,41 +5,41 @@
         <div class="row">
 
           <div class="col-lg-3 col-md-6 footer-contact">
-            <h3>Flexor</h3>
+            <h3>{{__('Footer-agency')}}</h3>
             <p>
-              A108 Adam Street <br>
-              New York, NY 535022<br>
-              United States <br><br>
-              <strong>Phone:</strong> +1 5589 55488 55<br>
-              <strong>Email:</strong> info@example.com<br>
+              {{__('Footer-address1')}} <br>
+              {{__('Footer-address2')}} <br>
+              {{__('Footer-address3')}}<br><br>
+              <strong>{{__('Footer-telephone')}}</strong>{{__('Footer-telephone value')}}<br>
+              <strong>{{__('Footer-email')}}:</strong>{{__('Footer-email value')}}<br>
             </p>
           </div>
 
           <div class="col-lg-2 col-md-6 footer-links">
-            <h4>Useful Links</h4>
+            <h4>{{__('Footer-menu heading')}}</h4>
             <ul>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">Home</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">About us</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">Services</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">Terms of service</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">Privacy policy</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="#">{{__('Menu-About')}}</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="#">{{__('Menu-Services')}}</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="#">{{__('Menu-Needs')}}</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="#">{{__('Menu-News & Updates')}}</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="#">{{__('Menu-Applications')}}</a></li>
             </ul>
           </div>
 
           <div class="col-lg-3 col-md-6 footer-links">
-            <h4>Our Services</h4>
+            <h4>{{__('Footer-link heading')}}</h4>
             <ul>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">Web Design</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">Web Development</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">Product Management</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">Marketing</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">Graphic Design</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="#">{{__('Footer-link1')}}</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="#">{{__('Footer-link2')}}</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="#">{{__('Footer-link3')}}</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="#">{{__('Footer-link4')}}</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="#">{{__('Footer-link5')}}</a></li>
             </ul>
           </div>
 
           <div class="col-lg-4 col-md-6 footer-newsletter">
-            <h4>Join Our Newsletter</h4>
-            <p>Tamen quem nulla quae legam multos aute sint culpa legam noster magna</p>
+            <h4>{{__('Footer-Subscribe heading')}}</h4>
+            <p>{{__('Footer-Subscribe description')}}</p>
             <form action="" method="post">
               <input type="email" name="email"><input type="submit" value="Subscribe">
             </form>

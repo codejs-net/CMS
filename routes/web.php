@@ -33,6 +33,7 @@ Route::group(['middleware' => ['auth']], function() {
     // --------CMS---------------------------------
     Route::resource('translation', TranslationController::class);
     Route::get('import_translation', [TranslationController::class, 'import_translation'])->name('import_translation');
+    Route::get('publish_tranlation', [TranslationController::class, 'publish_tranlation'])->name('publish_tranlation');
 
     // --------Home--------------------------------
     Route::get('cms-admin', [HomeController::class, 'index'])->name('cms-admin');

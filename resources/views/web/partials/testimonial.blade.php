@@ -4,56 +4,56 @@
       <div class="owl-carousel testimonials-carousel">
 
         <div class="testimonial-item">
-          <img src="assets/img/testimonials/testimonials-1.jpg" class="testimonial-img" alt="">
-          <h3>Saul Goodman</h3>
-          <h4>Ceo &amp; Founder</h4>
+          <img src="assets/img/team/chairman.jpg" class="testimonial-img" alt="">
+          <h3>{{__('Message-person name1')}}</h3>
+          <h4>{{__('Message-person designation1')}}</h4>
           <p>
             <i class="bx bxs-quote-alt-left quote-icon-left"></i>
-            Proin iaculis purus consequat sem cure digni ssim donec porttitora entum suscipit rhoncus. Accusantium quam, ultricies eget id, aliquam eget nibh et. Maecen aliquam, risus at semper.
+           {{__('Message-Message1')}}
             <i class="bx bxs-quote-alt-right quote-icon-right"></i>
           </p>
         </div>
 
         <div class="testimonial-item">
-          <img src="assets/img/testimonials/testimonials-2.jpg" class="testimonial-img" alt="">
-          <h3>Sara Wilsson</h3>
-          <h4>Designer</h4>
+          <img src="assets/img/team/aclg.jpg" class="testimonial-img" alt="">
+          <h3>{{__('Message-person name2')}}</h3>
+          <h4>{{__('Message-person designation2')}}</h4>
           <p>
             <i class="bx bxs-quote-alt-left quote-icon-left"></i>
-            Export tempor illum tamen malis malis eram quae irure esse labore quem cillum quid cillum eram malis quorum velit fore eram velit sunt aliqua noster fugiat irure amet legam anim culpa.
+            {{__('Message-Message2')}}
             <i class="bx bxs-quote-alt-right quote-icon-right"></i>
           </p>
         </div>
 
         <div class="testimonial-item">
-          <img src="assets/img/testimonials/testimonials-3.jpg" class="testimonial-img" alt="">
-          <h3>Jena Karlis</h3>
-          <h4>Store Owner</h4>
+          <img src="assets/img/team/secraraty.jpg" class="testimonial-img" alt="">
+          <h3>{{__('Message-person name3')}}</h3>
+          <h4>{{__('Message-person designation3')}}</h4>
           <p>
             <i class="bx bxs-quote-alt-left quote-icon-left"></i>
-            Enim nisi quem export duis labore cillum quae magna enim sint quorum nulla quem veniam duis minim tempor labore quem eram duis noster aute amet eram fore quis sint minim.
+            {{__('Message-Message3')}}
             <i class="bx bxs-quote-alt-right quote-icon-right"></i>
           </p>
         </div>
 
         <div class="testimonial-item">
-          <img src="assets/img/testimonials/testimonials-4.jpg" class="testimonial-img" alt="">
-          <h3>Matt Brandon</h3>
-          <h4>Freelancer</h4>
+          <img src="assets/img/team/govoner.jpg" class="testimonial-img" alt="">
+          <h3>{{__('Message-person name4')}}</h3>
+          <h4>{{__('Message-person designation4')}}</h4>
           <p>
             <i class="bx bxs-quote-alt-left quote-icon-left"></i>
-            Fugiat enim eram quae cillum dolore dolor amet nulla culpa multos export minim fugiat minim velit minim dolor enim duis veniam ipsum anim magna sunt elit fore quem dolore labore illum veniam.
+            {{__('Message-Message4')}}
             <i class="bx bxs-quote-alt-right quote-icon-right"></i>
           </p>
         </div>
 
         <div class="testimonial-item">
-          <img src="assets/img/testimonials/testimonials-5.jpg" class="testimonial-img" alt="">
-          <h3>John Larson</h3>
-          <h4>Entrepreneur</h4>
+          <img src="assets/img/team/secraraty.jpg" class="testimonial-img" alt="">
+          <h3>{{__('Message-person name5')}}</h3>
+          <h4>{{__('Message-person designation5')}}</h4>
           <p>
             <i class="bx bxs-quote-alt-left quote-icon-left"></i>
-            Quis quorum aliqua sint quem legam fore sunt eram irure aliqua veniam tempor noster veniam enim culpa labore duis sunt culpa nulla illum cillum fugiat legam esse veniam culpa fore nisi cillum quid.
+            {{__('Message-Message5')}}
             <i class="bx bxs-quote-alt-right quote-icon-right"></i>
           </p>
         </div>
