@@ -10,6 +10,7 @@ use App\Http\Controllers\SoapController;
 use App\Http\Controllers\LocalizationController;
 use App\Http\Controllers\SettingController;
 use App\Http\Controllers\Web\TranslationController;
+use App\Http\Controllers\Web\NavigationController;
 
 
 
@@ -34,6 +35,8 @@ Route::group(['middleware' => ['auth']], function() {
     Route::resource('translation', TranslationController::class);
     Route::get('import_translation', [TranslationController::class, 'import_translation'])->name('import_translation');
     Route::get('publish_tranlation', [TranslationController::class, 'publish_tranlation'])->name('publish_tranlation');
+
+    Route::resource('navigations', NavigationController::class);
 
     // --------Home--------------------------------
     Route::get('cms-admin', [HomeController::class, 'index'])->name('cms-admin');
