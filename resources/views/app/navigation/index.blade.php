@@ -9,37 +9,7 @@
 @php
 $lang = session()->get('db_locale');
 $name="name".$lang;
-// ----------------------------------
-function renderMenuItem($id, $label, $url)
-{
-    return '<li class="dd-item dd3-item" data-id="' . $id . '" data-label="' . $label . '" data-url="' . $url . '">' .
-        '<div class="dd-handle dd3-handle" > Drag</div>' .
-        '<div class="dd3-content"><span>' . $label . '</span>' .
-        '<div class="item-edit">Edit</div>' .
-        '</div>' .
-        '<div class="item-settings d-none">' .
-        '<p><label for="">Navigation Label<br><input type="text" name="navigation_label" value="' . $label . '"></label></p>' .
-        '<p><label for="">Navigation Url<br><input type="text" name="navigation_url" value="' . $url . '"></label></p>' .
-        '<p><a class="item-delete" href="javascript:;">Remove</a> |' .
-        '<a class="item-close" href="javascript:;">Close</a></p>' .
-        '</div>';
 
-}
-
-function menuTree($quary,$parent_id = 0)
-{
-    $items = '';
-    $items .= '<ol class="dd-list">';
-    foreach ($quary as $row) {
-        if($row->parent_id==$parent_id){
-            $items .= renderMenuItem($row['id'], $row['item'], $row['link']);
-            $items .= menuTree($row['id']);
-            $items .= '</li>';
-        }
-    }
-    $items .= '</ol>';
-    return $items;
-}
 @endphp
 
 <nav aria-label="breadcrumb">
@@ -68,7 +38,8 @@ function menuTree($quary,$parent_id = 0)
         <div class="row m-2">
             <div class="col-md-4 col-4">
                 <div class="js-border-radius-2">
-                    <span for="" class="ml-3 mt-1">Add Menu Item</span>
+                    <div class="row p-3">
+                    <span for="" class="ml-3 ">Add Menu Item</span>
                     <span id="ftag"></span>
                     <div class="col-md-12 p-3">
 
@@ -116,7 +87,6 @@ function menuTree($quary,$parent_id = 0)
                                                 <br>
                                                 <input class="custom-control-input" type="checkbox" value="" name="submenu" id="submenu">
                                                 <label class="custom-control-label" for="submenu">{{__('SubMenu')}}</label> 
-                                                <input type="hidden" value="0" name="level" id="level">
                                             </div> 
                                         </div>
                         
@@ -151,18 +121,29 @@ function menuTree($quary,$parent_id = 0)
                         </div> 
                         {{-- End Link item --}}
                     </div> 
+                    </div>
                 </div>
             </div> 
             <div class="col-md-8 col-8">
-                {{-- nestable --}}
-                <div class="dd" id="nestable">
-                    <?php
-                        $html_menu = menuTree($navdata);
-                        echo (empty($html_menu)) ? '<ol class="dd-list"></ol>' : $html_menu;
-                    ?>
+                <div class="js-border-radius-2">
+                    <div class="row p-3">
+                        <span for="" class="ml-3 mt-1">Menu Stracture</span>
+                        <div class="col-md-12 col-12">
+                            {{-- nestable --}}
+                            <div class="dd" id="nestable">
+                            </div>
+                            {{-- End nestable --}}
+                        </div>
+                        <div class="col-md-12 col-12">
+                            <hr />
+                            <form method="post" id="save_menu_form" class="needs-validation"  novalidate>
+                                {{ csrf_field() }}
+                                <input type="hidden" id="nestable-output" name="menu">
+                                <button type="submit" class="btn btn-primary btn-sm ml-2" id="btn_save_menu"><i class="fa fa-check" aria-hidden="true"></i> {{ __("Save Menu")}}</button>
+                            </form>
+                        </div>
+                    </div>
                 </div>
-                {{-- End nestable --}}
-    
             </div>
         </div>  
     </div>
@@ -178,6 +159,7 @@ function menuTree($quary,$parent_id = 0)
     }); 
 
     $(document).ready(function() {
+        load_menu();
         var updateOutput = function () {
         $('#nestable-output').val(JSON.stringify($('#nestable').nestable('serialize')));
         };
@@ -185,18 +167,17 @@ function menuTree($quary,$parent_id = 0)
         $('#nestable').nestable().on('change', updateOutput);
 
         updateOutput();
+        
     });
 
     $('#submenu').change(function() {
         if($('#submenu').prop("checked") == true){
             $('#div_perant').fadeIn();
-            $('#level').val('1');
             load_menu_item();
         }
         else{
             $('#div_perant').fadeOut();
             $('#perant').val('0');
-            $('#level').val('0');
         }
     });
 
@@ -223,9 +204,9 @@ function menuTree($quary,$parent_id = 0)
                     console.log(data.data);
                     toastr.success('Menu item Added Successfully')
                     $("#custom_item_form").trigger("reset");
-                    $('#level').val('0');
                     $('.submenu').prop('checked', false);
                     $('#div_perant').fadeOut();
+                    load_menu();
                    
                 },
                 error:function(data){
@@ -251,6 +232,53 @@ function menuTree($quary,$parent_id = 0)
                     op+='<option value="'+data[i].id+'">'+ data[i].item+'</option>';
                 }
                 $("#perant").empty().append(op);
+            },
+            error:function(data){
+            }
+        })
+    }
+
+    function renderMenuItem(id, label, url)
+    {
+        var op='';
+        op+='<li class="dd-item dd3-item" data-id="' + id + '" data-label="' + label + '" data-url="' + url + '">';
+        op+='<div class="dd-handle dd3-handle" > Drag</div>';
+        op+='<div class="dd3-content"><span>' + label + '</span><div class="item-edit">Edit</div></div>';
+        op+='<div class="item-settings d-none">';
+        op+='<p><label for="">Navigation Label<br><input type="text" name="navigation_label" value="' + label + '"></label></p>';
+        op+='<p><label for="">Navigation Url<br><input type="text" name="navigation_url" value="' + url + '"></label></p>';
+        op+='<p><a class="item-delete" href="javascript:;">Remove</a> |';
+        op+='<a class="item-close" href="javascript:;">Close</a></p>';
+        op+='</div>';
+        return op;
+    }
+
+    function menuTree(quary,parent_id = 0)
+    {
+        var items = '';
+        items += '<ol class="dd-list">';
+        for(var i=0;i<quary.length;i++)
+        {
+            if(quary[i].parent_id==parent_id)
+            {
+                items += renderMenuItem(quary[i].id, quary[i].item, quary[i].link);
+                items += menuTree(quary,quary[i].id);
+                items += '</li>';
+            }
+        }
+        items += '</ol>';
+        return items;
+    }
+
+    function load_menu()
+    {
+        $.ajax
+        ({
+            type: "GET",
+            url: "{{route('load_menu_item')}}", 
+            success:function(data){
+                
+                $("#nestable").html(menuTree(data));
             },
             error:function(data){
             }

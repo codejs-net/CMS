@@ -17,12 +17,11 @@ class NavigationController extends Controller
     }
     public function add_menu_item(Request $request)
     {
-        $perant=($request->level)=='1'? ($request->perant.'-'):"";
+        $perant=($request->perant)!='0'? ($request->perant.'-'):"";
         $key="Menu-".$perant.$request->item;
         $menu_data = array(
             'section'   =>  "Menu",
             'item'      =>  $request->item,
-            'level'     =>  $request->level,
             'parent_id' =>  $request->perant | 0, 
             'key'       =>  $key, 
             'link'      =>  $request->link, 

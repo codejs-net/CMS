@@ -18,7 +18,6 @@ class CreateNavigationsTable extends Migration
             $table->id();
             $table->string('section')->nullable();
             $table->string('item')->nullable();
-            $table->integer('level')->default(0);
             $table->integer('parent_id')->default(0);
             $table->string('key')->nullable();
             $table->string('link')->nullable();
