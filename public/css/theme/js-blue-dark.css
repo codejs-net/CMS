@@ -1,11 +1,11 @@
 /* -----------navbar---------------------------------- */
 .js-nav-bg {
-    background: #1d6af0;
-    background: linear-gradient(90deg, rgba(28, 66, 235, 0.603))0%, rgba(243, 241, 247, 1) 50%, rgba(148, 187, 233, 0.639093137254902) 100%;
+    background: #fff;
+    background: linear-gradient(90deg, rgba(21, 22, 22, 0.603))0%, rgba(243, 241, 247, 1) 50%, rgba(12, 12, 12, 0.639) 100%;
 }
 
 .js-nav-text {
-    color: #fcfafa !important;
+    color: #0f0f0f !important;
     font-weight: 300 !important;
 }
 

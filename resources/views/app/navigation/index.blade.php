@@ -22,12 +22,9 @@ $name="name".$lang;
         <!-- Content Header (Page header) -->
 <div class="container-fulid">
     <div class="row text-center">
-        <div class="col-md-11 col-sm-6 text-left p-2"> 
+        <div class="col-md-12 col-sm-6 text-left p-2"> 
             <h5> <i class="fa fa-search ml-4 pl-2">Navigation</i></h5>
         </div>  
-        <div class="col-md-1 col-sm-6 text-right pr-4">
-            <a href="{{ route('import_translation') }}" class="btn btn-info btn-sm" name="import_translation" id="import_translation" ><i class="fa fa-plus"></i>&nbsp; Import</a>
-        </div>
     </div>
     
 </div>
@@ -136,10 +133,12 @@ $name="name".$lang;
                         </div>
                         <div class="col-md-12 col-12">
                             <hr />
-                            <form method="post" id="save_menu_form" class="needs-validation"  novalidate>
+                            <form method="post" action="{{route('save_menu')}}" id="save_menu_form" class="needs-validation"  novalidate>
                                 {{ csrf_field() }}
                                 <input type="hidden" id="nestable-output" name="menu">
-                                <button type="submit" class="btn btn-primary btn-sm ml-2" id="btn_save_menu"><i class="fa fa-check" aria-hidden="true"></i> {{ __("Save Menu")}}</button>
+                                <div class="pull-right pb-2"> 
+                                    <button type="submit" class="btn btn-primary btn-sm ml-2" id="btn_save_menu"><i class="fa fa-check" aria-hidden="true"></i> {{ __("Save Menu")}}</button>
+                                </div>
                             </form>
                         </div>
                     </div>
@@ -165,7 +164,6 @@ $name="name".$lang;
         };
 
         $('#nestable').nestable().on('change', updateOutput);
-
         updateOutput();
         
     });

@@ -10,9 +10,8 @@ class NavigationController extends Controller
 {
     public function index(Request $request)
     {
-        $navdata = navigation::select('*')->get();
-
-        return view('app.navigation.index',compact('navdata'));
+        // $navdata = navigation::select('*')->get();
+        return view('app.navigation.index');
     
     }
     public function add_menu_item(Request $request)
@@ -37,4 +36,41 @@ class NavigationController extends Controller
         $data=navigation::all();
         return response()->json($data);
     }
+
+    public function save_menu(Request $request)
+    {
+        $array_menu = json_decode($request->menu, true);
+        // dd($array_menu);
+        if (empty($array_menu)) {
+            return redirect()->route('navigations.index')->with('info','Nothing to Change');
+        }
+        navigation::query()->truncate();
+        $this->updateMenu($array_menu);
+        return redirect()->route('navigations.index')->with('success','Menu Saved successfully');
+    }
+
+    function updateMenu($menu,$parent = 0)
+    {
+        foreach ($menu as $value) {
+            
+            $item = $value['label'];
+            $link = (empty($value['url'])) ? '#' : $value['url'];
+
+            $key_parent=($parent)!= 0 ? ($parent.'.'):"";
+            $key="Menu-".$key_parent.$item;
+            
+            $menu_data = array(
+                'section'   =>  "Menu",
+                'item'      =>  $item,
+                'parent_id' =>  $parent, 
+                'key'       =>  $key, 
+                'link'      =>  $link, 
+            );
+            $insert = navigation::create($menu_data);
+
+            if (array_key_exists('children', $value))
+                $this->updateMenu($value['children'],$insert->id);
+        }
+    }
+
 }

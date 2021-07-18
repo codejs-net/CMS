@@ -1,7 +1,7 @@
 /* -----------navbar---------------------------------- */
 .js-nav-bg {
     background: #2b2e31;
-    background: linear-gradient(90deg, rgba(73, 74, 82, 0.603))0%, rgba(243, 241, 247, 1) 50%, rgba(148, 187, 233, 0.639093137254902) 100%;
+    background: linear-gradient(90deg, rgba(73, 74, 82, 0.603))0%, rgba(243, 241, 247, 1) 50%, rgba(17, 17, 17, 0.639) 100%;
 }
 .js-nav-text{
     color: #fcfafa !important;
