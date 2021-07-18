@@ -10,8 +10,9 @@ class NavigationController extends Controller
 {
     public function index(Request $request)
     {
-        // $transdata = translation::select('*')->get();
-        return view('app.navigation.index');
+        $navdata = navigation::select('*')->get();
+
+        return view('app.navigation.index',compact('navdata'));
     
     }
     public function add_menu_item(Request $request)

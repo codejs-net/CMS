@@ -1,10 +1,45 @@
 @extends('app.layouts.app')
+@section('style')
+<link rel="stylesheet" href="{{ asset('plugins/nestable/css/jquery.nestable.css') }}">
+<link rel="stylesheet" href="{{ asset('plugins/nestable/css/style.css') }}">
+@endsection
 @section('content')
 
 
 @php
 $lang = session()->get('db_locale');
 $name="name".$lang;
+// ----------------------------------
+function renderMenuItem($id, $label, $url)
+{
+    return '<li class="dd-item dd3-item" data-id="' . $id . '" data-label="' . $label . '" data-url="' . $url . '">' .
+        '<div class="dd-handle dd3-handle" > Drag</div>' .
+        '<div class="dd3-content"><span>' . $label . '</span>' .
+        '<div class="item-edit">Edit</div>' .
+        '</div>' .
+        '<div class="item-settings d-none">' .
+        '<p><label for="">Navigation Label<br><input type="text" name="navigation_label" value="' . $label . '"></label></p>' .
+        '<p><label for="">Navigation Url<br><input type="text" name="navigation_url" value="' . $url . '"></label></p>' .
+        '<p><a class="item-delete" href="javascript:;">Remove</a> |' .
+        '<a class="item-close" href="javascript:;">Close</a></p>' .
+        '</div>';
+
+}
+
+function menuTree($quary,$parent_id = 0)
+{
+    $items = '';
+    $items .= '<ol class="dd-list">';
+    foreach ($quary as $row) {
+        if($row->parent_id==$parent_id){
+            $items .= renderMenuItem($row['id'], $row['item'], $row['link']);
+            $items .= menuTree($row['id']);
+            $items .= '</li>';
+        }
+    }
+    $items .= '</ol>';
+    return $items;
+}
 @endphp
 
 <nav aria-label="breadcrumb">
@@ -119,6 +154,14 @@ $name="name".$lang;
                 </div>
             </div> 
             <div class="col-md-8 col-8">
+                {{-- nestable --}}
+                <div class="dd" id="nestable">
+                    <?php
+                        $html_menu = menuTree($navdata);
+                        echo (empty($html_menu)) ? '<ol class="dd-list"></ol>' : $html_menu;
+                    ?>
+                </div>
+                {{-- End nestable --}}
     
             </div>
         </div>  
@@ -135,7 +178,13 @@ $name="name".$lang;
     }); 
 
     $(document).ready(function() {
-        
+        var updateOutput = function () {
+        $('#nestable-output').val(JSON.stringify($('#nestable').nestable('serialize')));
+        };
+
+        $('#nestable').nestable().on('change', updateOutput);
+
+        updateOutput();
     });
 
     $('#submenu').change(function() {
@@ -208,5 +257,10 @@ $name="name".$lang;
         })
     }
 
+    // -----nestable----------------------
+    
+
 </script>
+<script src="{{ asset('plugins/nestable/js/jquery.nestable.js') }}"defer></script>
+{{-- <script src="{{ asset('plugins/nestable/js/script.js') }}"defer></script> --}}
 @endsection
