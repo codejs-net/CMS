@@ -19,19 +19,16 @@ function menuTree($menudata)
     $items = '';
       foreach ($menudata as $row) 
       {
-        if(!empty($row['submenu']))
+        if(count($row['children'])>0)
         {
-          $items .= SubMenuItem($row['id'], $row['key'], $row['link']);
+          $items .= SubMenuItem($row['id'], $row['item'], $row['link']);
           $items .='<ul>';
-            foreach ($row['submenu'] as $subrow) 
-            {
-              $items .= MenuItem($subrow['id'], $subrow['key'], $subrow['link']);
-            }
+          $items.= menuTree($row['children']);
           $items .='</ul></li>';
         }
         else 
         {
-          $items .= MenuItem($row['id'], $row['key'], $row['link']);
+          $items .= MenuItem($row['id'], $row['item'], $row['link']);
         }
 
       }
@@ -49,7 +46,9 @@ function menuTree($menudata)
 
       <nav class="nav-menu d-none d-lg-block">
         <ul>
-          <?php echo menuTree($menudata_list);?>
+           {{--  --}}
+          <?php echo menuTree($menulist); ?>
+           {{--  --}}
 
           <ul class="nav navbar-nav">
             <li class="nav-item">
