@@ -245,7 +245,7 @@ $name="name".$lang;
         op+='<div class="item-settings d-none">';
         op+='<p><label for="">Navigation Label<br><input type="text" name="navigation_label" value="' + label + '"></label></p>';
         op+='<p><label for="">Navigation Url<br><input type="text" name="navigation_url" value="' + url + '"></label></p>';
-        op+='<p><a class="item-delete" href="javascript:;">Remove</a> |';
+        op+='<p><a class="item-delete" href="javascript:;">Remove</a> | ';
         op+='<a class="item-close" href="javascript:;">Close</a></p>';
         op+='</div>';
         return op;
