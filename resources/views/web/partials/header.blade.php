@@ -21,14 +21,14 @@ function menuTree($menudata)
       {
         if(count($row['children'])>0)
         {
-          $items .= SubMenuItem($row['id'], $row['item'], $row['link']);
+          $items .= SubMenuItem($row['id'], $row['key'], $row['link']);
           $items .='<ul>';
           $items.= menuTree($row['children']);
           $items .='</ul></li>';
         }
         else 
         {
-          $items .= MenuItem($row['id'], $row['item'], $row['link']);
+          $items .= MenuItem($row['id'], $row['key'], $row['link']);
         }
 
       }

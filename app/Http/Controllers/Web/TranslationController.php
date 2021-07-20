@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Web;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\translation;
+use App\Models\navigation;
 
 class TranslationController extends Controller
 {
@@ -107,8 +108,46 @@ class TranslationController extends Controller
             );
             translation::create($import_data);
         }
+        // -----menu---------
+        $this->import_menu($data_en,$data_si,$data_ta);
+        // ------------------
+
         return redirect()->route('translation.index')
         ->with('success','Tranlation Strings Import successfully from Json Files');
 
+    }
+    public function import_menu($data_en,$data_si,$data_ta)
+    {
+
+        $menu=navigation::all();
+        $exsit_menu = translation::where('section','Menu')->delete();
+        foreach($menu as $key => $item)
+        {
+            $section="Menu";
+            $key=$item->key;
+            $string_en="";
+            $string_si="";
+            $string_ta="";
+            
+            if (array_key_exists($key,$data_en))
+            { $string_en=$data_en[$key];}
+            else
+            {$string_en=$item->item;}
+
+            if (array_key_exists($key,$data_si))
+            { $string_si=$data_si[$key];}
+
+            if (array_key_exists($key,$data_ta))
+            { $string_ta=$data_ta[$key];}
+
+            $import_menu = array(
+                'section'   =>  $section,
+                'key'       =>  $key,
+                'string_en' =>  $string_en, 
+                'string_si' =>  $string_si, 
+                'string_ta' =>  $string_ta, 
+            );
+            translation::create($import_menu);
+        }
     }
 }
