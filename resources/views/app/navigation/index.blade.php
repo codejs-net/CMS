@@ -90,7 +90,7 @@ $name="name".$lang;
                                         <div class="col-12 col-md-12" id="div_perant" style="display: none;">
                                             <div class="form-group">
                                                 <label for="level">Perant Menu Item</label>
-                                                <select class="form-control"name="perant" id="perant" value=""required>
+                                                <select class="form-control"name="perant" id="perant" value="0"required>
                                                     
                                                 </select>
                                                 <div class="invalid-feedback">{{ __("Please Select perant")}}</div>

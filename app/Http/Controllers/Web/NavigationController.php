@@ -16,8 +16,14 @@ class NavigationController extends Controller
     }
     public function add_menu_item(Request $request)
     {
-        $perant=($request->perant)!='0'? ($request->perant.'-'):"";
-        $key="Menu-".$perant.$request->item;
+        error_log("------------------------------".$request->perant);
+        $key_parent="";
+        if(!$request->perant=='0')
+        {
+            $prow = navigation::where('id', $request->perant)->first();
+            $key_parent=$prow->item.'.';
+        }
+        $key="Menu-".$key_parent.$request->item;
         $menu_data = array(
             'section'   =>  "Menu",
             'item'      =>  $request->item,
@@ -51,12 +57,18 @@ class NavigationController extends Controller
 
     function updateMenu($menu,$parent = 0)
     {
+        // dd($menu);
         foreach ($menu as $value) {
             
             $item = $value['label'];
             $link = (empty($value['url'])) ? '#' : $value['url'];
 
-            $key_parent=($parent)!= 0 ? ($parent.'.'):"";
+            $key_parent="";
+            if(!$parent==0)
+            {
+                $prow = navigation::where('id', $parent)->first();
+                $key_parent=$prow->item.'.';
+            }
             $key="Menu-".$key_parent.$item;
             
             $menu_data = array(
