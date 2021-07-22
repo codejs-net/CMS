@@ -119,7 +119,7 @@
         <a href="" class="brand-link">
             <img src="{{ asset('img/js2.png') }}" alt="lms" class="brand-image img-circle elevation-5"
                  style="opacity: 1">
-            <span class="brand-text font-weight-bold js-sidebar-heding">LMS</span>
+            <span class="brand-text font-weight-bold js-sidebar-heding">CMS</span>
         </a>
         @include('app.partials.sidebar')
     </aside>

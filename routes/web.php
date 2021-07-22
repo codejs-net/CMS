@@ -11,6 +11,8 @@ use App\Http\Controllers\LocalizationController;
 use App\Http\Controllers\SettingController;
 use App\Http\Controllers\Web\TranslationController;
 use App\Http\Controllers\Web\NavigationController;
+use App\Http\Controllers\Web\PageController;
+use App\Http\Controllers\Web\PostController;
 
 
 
@@ -25,9 +27,8 @@ Route::get('lang/{locale}', [LocalizationController::class, 'index'])->name('lan
 // --------Web--------------------------------
 Route::get('/', [WebController::class, 'index'])->name('/');
 Route::get('home', [WebController::class, 'index'])->name('home');
-Route::get('about', [WebController::class, 'about'])->name('about');
-Route::get('blog', [WebController::class, 'blog_index'])->name('blog');
-Route::get('blog_detail/{id}', [WebController::class, 'blog_detail'])->name('blog_detail');
+Route::get('page/{id}', [WebController::class, 'page'])->name('page');
+Route::get('post/{id}', [WebController::class, 'post'])->name('post');
 
 Route::group(['middleware' => ['auth']], function() {
 
@@ -40,6 +41,10 @@ Route::group(['middleware' => ['auth']], function() {
     Route::POST('add_menu_item', [NavigationController::class, 'add_menu_item'])->name('add_menu_item');
     Route::get('load_menu_item', [NavigationController::class, 'load_menu_item'])->name('load_menu_item');
     Route::POST('save_menu', [NavigationController::class, 'save_menu'])->name('save_menu');
+
+    Route::resource('pages', PageController::class);
+
+    Route::resource('posts', PostController::class);
 
     // --------Home--------------------------------
     Route::get('cms-admin', [HomeController::class, 'index'])->name('cms-admin');

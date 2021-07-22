@@ -11,7 +11,7 @@ class WebController extends Controller
     {
         $menulist = navigation::tree();
         // dd($navdata[1]);
-        return view('web.template.agency1.index',compact('menulist'));
+        return view('web.template.index',compact('menulist'));
     }
 
     public function about()

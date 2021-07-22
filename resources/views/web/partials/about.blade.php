@@ -30,7 +30,7 @@
           </div>
 
           <div class="text-center btn-read-more" data-aos="fade-up" data-aos-delay="200">
-            <a href="{{ route('about') }}" class="">{{__('About-more about')}}<i class="bx bx-chevron-right"></i></a>
+            <a href="" class="">{{__('About-more about')}}<i class="bx bx-chevron-right"></i></a>
           </div>
 
         </div>

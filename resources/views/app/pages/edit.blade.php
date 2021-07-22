@@ -1,4 +1,4 @@
-@extends('web.layouts.app')
+@extends('app.layouts.app')
 @section('style')
 @endsection
 
@@ -8,8 +8,8 @@
     <div class="container">
       <ol>
         <li><a href="index.html">Home</a></li>
-        <li>Blog</li>
-        <li>Detail</li>
+        <li>Pages</li>
+        <li>Edit</li>
       </ol>
     </div>
   </section><!-- End Breadcrumbs -->

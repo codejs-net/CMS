@@ -11,6 +11,7 @@
                 <ul class="nav nav-pills nav-sidebar flex-column " data-widget="treeview" role="menu" data-accordion="false">
                 <!-- dashboard -->
                     <li class="nav-item has-treeview menu-open">
+
                         <a href="#" class="nav-link">
                             <i class="nav-icon fas fa-tachometer-alt"></i>
                             <p>
@@ -22,14 +23,118 @@
                             <li class="nav-item">
                                 <a href="{{ url('/home') }}" class="nav-link">
                                     <i class="far fa-circle nav-icon"></i>
-                                    <p>{{__('Library')}}</p>
+                                    <p>{{__('Dashboard')}}</p>
                                 </a>
                             </li>
                             
 
                         </ul>
+                    </li>
 
-                    
+                    <li class="nav-item has-treeview">
+                        <a href="#" class="nav-link">
+                            <i class="nav-icon fa fa-paint-brush"></i>
+                            <p>
+                            {{__('Appearance')}}
+                                <i class="right fas fa-angle-left"></i>
+                            </p>
+                        </a>
+                        <ul class="nav nav-treeview">
+                            <li class="nav-item">
+                                <a href="{{ route('navigations.index') }}" class="nav-link">
+                                    <i class="far fa-circle nav-icon"></i>
+                                    <p>{{__('Navigations')}}</p>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="{{ route('navigations.index') }}" class="nav-link">
+                                    <i class="far fa-circle nav-icon"></i>
+                                    <p>{{__('Theame')}}</p>
+                                </a>
+                            </li>
+    
+                        </ul>
+                    </li>
+
+                    <li class="nav-item has-treeview">
+                        <a href="#" class="nav-link">
+                            <i class="nav-icon fa fa-globe"></i>
+                            <p>
+                            {{__('Translations')}}
+                                <i class="right fas fa-angle-left"></i>
+                            </p>
+                        </a>
+                        <ul class="nav nav-treeview">
+
+                            <li class="nav-item">
+                                <a href="{{ route('translation.index') }}" class="nav-link">
+                                    <i class="far fa-circle nav-icon"></i>
+                                    <p>{{__('Translations')}}</p>
+                                </a>
+                            </li>
+    
+                        </ul>
+                    </li>
+
+                    <li class="nav-item has-treeview">
+                        <a href="#" class="nav-link">
+                            <i class="nav-icon fa fa-file"></i>
+                            <p>
+                            {{__('Pages')}}
+                                <i class="right fas fa-angle-left"></i>
+                            </p>
+                        </a>
+                        <ul class="nav nav-treeview">
+
+                            <li class="nav-item">
+                                <a href="{{ route('pages.index') }}" class="nav-link">
+                                    <i class="far fa-circle nav-icon"></i>
+                                    <p>{{__('Pages')}}</p>
+                                </a>
+                            </li>
+    
+                        </ul>
+                    </li>
+
+                    <li class="nav-item has-treeview">
+                        <a href="#" class="nav-link">
+                            <i class="nav-icon fa fa-thumb-tack"></i>
+                            <p>
+                            {{__('Posts')}}
+                                <i class="right fas fa-angle-left"></i>
+                            </p>
+                        </a>
+                        <ul class="nav nav-treeview">
+
+                            <li class="nav-item">
+                                <a href="{{ route('posts.index') }}" class="nav-link">
+                                    <i class="far fa-circle nav-icon"></i>
+                                    <p>{{__('Posts')}}</p>
+                                </a>
+                            </li>
+    
+                        </ul>
+                    </li>
+
+                    <li class="nav-item has-treeview">
+                        <a href="#" class="nav-link">
+                            <i class="nav-icon fa fa-commenting-o"></i>
+                            <p>
+                            {{__('Comments')}}
+                                <i class="right fas fa-angle-left"></i>
+                            </p>
+                        </a>
+                        <ul class="nav nav-treeview">
+
+                            <li class="nav-item">
+                                <a href="{{ route('posts.index') }}" class="nav-link">
+                                    <i class="far fa-circle nav-icon"></i>
+                                    <p>{{__('Comments')}}</p>
+                                </a>
+                            </li>
+    
+                        </ul>
+                    </li>
                    
                     <li class="nav-item has-treeview">
                         <a href="#" class="nav-link">
@@ -170,34 +275,7 @@
                     </li>
                     @endcan
                    
-                    <li class="nav-item has-treeview">
-                        <a href="#" class="nav-link">
-                            <i class="nav-icon fa fa-database"></i>
-                            <p>
-                            {{__('Translations')}}
-                                <i class="right fas fa-angle-left"></i>
-                            </p>
-                        </a>
-                        <ul class="nav nav-treeview">
-
-                            <li class="nav-item">
-                                <a href="{{ route('translation.index') }}" class="nav-link">
-                                    <i class="far fa-circle nav-icon"></i>
-                                    <p>{{__('Translations')}}</p>
-                                </a>
-                            </li>
-
-                            <li class="nav-item">
-                                <a href="{{ route('navigations.index') }}" class="nav-link">
-                                    <i class="far fa-circle nav-icon"></i>
-                                    <p>{{__('Navigations')}}</p>
-                                </a>
-                            </li>
- 
-                        </ul>
-                    </li>
-
-
+                   
                     <li class="nav-header"></li>
                     <!-- <li class="nav-item">
                         <a href="#" class="nav-link">
