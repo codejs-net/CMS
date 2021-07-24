@@ -97,6 +97,7 @@
         $('#title').val("{{$page_data->page_title_en}}");
 
         CKEDITOR.replace('txteditor');
+        $('#select_language').val('en');
     });
 
     $('#page_language').change(function() {
