@@ -65,9 +65,11 @@
 @endsection
 
 @section('script')
+<script src="{{ asset('plugins/ckeditor/ckeditor.js') }}"></script>
+
 <script>
     $(document).ready(function() {
-        $("#txteditor").Editor();
+        CKEDITOR.replace('txteditor');
     });
 </script>
 @endsection
