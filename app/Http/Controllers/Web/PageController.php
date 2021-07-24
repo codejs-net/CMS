@@ -10,10 +10,15 @@ class PageController extends Controller
 {
     public function index(Request $request)
     {
-        $page = page::select('*')->get();
+        $page_data = page::select('*')->get();
         // $transdata = translation::select('*')->paginate(20);
-        return view('app.pages.index',compact('page'));
+        return view('app.pages.index',compact('page_data'));
     
+    }
+
+    public function create(Request $request)
+    {
+        return view('app.pages.create');
     }
 
     public function store(Request $request)

@@ -63,6 +63,9 @@
     <!-- SmartWizard -->
     <link href="{{ asset('plugins/smart_wizard/css/smart_wizard.min.css') }}" rel="stylesheet">
 
+    {{-- --Editor --}}
+    <link href="{{ asset('plugins/editor/css/editor.css') }}" rel="stylesheet">
+
      <!-- Site Custom -->
      <link href="{{ asset('css/site.css') }}" rel="stylesheet">
      
@@ -182,6 +185,8 @@
   <script src="{{ asset('plugins/datatables-bs4/js/natural.js') }}" defer></script>
 
   <!-- <script src="{{ asset('plugins/popper/popper.js.map') }}" defer></script> -->
+
+  <script src="{{ asset('plugins/editor/js/editor.js') }}" defer></script>
 
     <!-- ======================================================================== -->
 
