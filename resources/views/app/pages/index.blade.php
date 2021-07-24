@@ -40,10 +40,9 @@
                 @foreach ($page_data as $key => $page)
                     <tr>
                         <td>{{ $page->id }}</td>
-                        <td>{{ $page->page_title }}</td>
+                        <td>{{ $page->page_title_en }}</td>
                         <td>{{ $page->page_author }}</td>
                         <td>{{ $page->page_date }}</td>
-                        <td></td>
                         <td>
                         <a class="btn btn-outline-primary btn-sm" href="{{ route('edit_pages',$page->id) }}">Edit</a>
                         <a class="btn btn-sm btn-outline-danger " data-toggle="modal" data-target="#data_delete" data-dataid="{{ $page->id }}" data-dataname="{{ $page->page_title }}"><i class="fa fa-trash" ></i>&nbsp;Delete</a>

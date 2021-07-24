@@ -17,8 +17,12 @@ class CreatePagesTable extends Migration
             $table->id();
             $table->integer('page_author')->nullable();
             $table->date('page_date')->nullable();
-            $table->longText('page_title')->nullable();
-            $table->longText('page_content')->nullable();
+            $table->longText('page_title_en')->nullable();
+            $table->longText('page_title_si')->nullable();
+            $table->longText('page_title_ta')->nullable();
+            $table->longText('page_content_en')->nullable();
+            $table->longText('page_content_si')->nullable();
+            $table->longText('page_content_ta')->nullable();
             $table->string('page_status')->nullable();
             $table->string('page_name')->nullable();
             $table->string('link')->nullable();

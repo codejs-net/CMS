@@ -25,38 +25,62 @@
 
 
 <div class="container-fuild">
-<div class="card card-body mx-3">
-
-
-
-<form method="post" action="{{ route('pages.index')}}"  id="user_form" class="needs-validation"  novalidate>
-{{ csrf_field() }}
-
-<div class="row">
+    <div class="row">
+        <div class="col-xs-10 col-sm-10 col-md-10">
+            <div class="card card-body ml-2">
+                <form method="post" action="{{ route('pages.store')}}"  id="page_form" class="needs-validation"  novalidate>
+                {{ csrf_field() }}
+            
+                <div class="row">
+                    <div class="col-xs-12 col-sm-12 col-md-12">
+                        <div class="form-group">
+                            <label for="title">Page Title</label>
+                            <input type="text" name="title" id="title" class="form-control" placeholder="Page Title" value="{{old('username')}}" required>
+                            <span class="text-danger">{{ $errors->first('title') }}</span>
+                        </div>
+                    </div>
+                    
+                    <div class="col-xs-12 col-sm-12 col-md-12">
+                        <div class="form-group">
+                            <textarea class="form-control" name="txteditor" id="txteditor"></textarea>
+                        </div>
+                    </div>
+                    <input type="hidden" id="select_language" name="select_language">
+                </div>
+                <hr>
+                    <div class="box-footer clearfix pull-right">    
+                        <button type="submit" class="btn btn-success btn-sm ml-2" id="save_page"><i class="fa fa-check" aria-hidden="true"></i> {{ __("Save")}}</button>
+                        <button type="button" class="btn btn-secondary btn-sm ml-2" id="cler">&nbsp;Reset<i class="fa fa-times"></i></button>
+                    </div>
+                </form>
+                                
+            </div>
+        </div>
     
-    <div class="col-xs-12 col-sm-12 col-md-12">
-        <div class="form-group">
-            <label for="fullname">Page Title</label>
-            <input type="text" name="title" id="title" class="form-control" placeholder="Page Title" value="{{old('username')}}" required>
-            <span class="text-danger">{{ $errors->first('title') }}</span>
+        <div class="col-xs-2 col-sm-2 col-md-2">
+            <div class="card card-body mr-2">
+                <div class="form-group">
+                    <label for="language">Language</label>
+                      <select class="form-control" value="en" name="page_language" id="page_language">
+                        <option value="en" selected>English</option>
+                        <option value="si">Sinhala</option>
+                        <option value="ta">Tamil</option>
+                      </select>
+                    <span class="text-danger">{{ $errors->first('title') }}</span>
+                </div>
+            </div>
+
+            <div class="card card-body mr-2">
+                <div class="form-group">
+                    <label for="language">Widgets</label>
+                      <select class="form-control" name="" id="">
+                       
+                      </select>
+                    <span class="text-danger">{{ $errors->first('title') }}</span>
+                </div>
+            </div>
         </div>
     </div>
-    
-    <div class="col-xs-12 col-sm-12 col-md-12">
-        <div class="form-group">
-            <textarea class="form-control" id="txteditor"></textarea>
-        </div>
-    </div>
-    
-</div>
-<hr>
-    <div class="box-footer clearfix pull-right">    
-        <button type="submit" class="btn btn-success btn-sm ml-2" id="save_staff"><i class="fa fa-check" aria-hidden="true"></i> {{ __("Save")}}</button>
-        <button type="button" class="btn btn-secondary btn-sm ml-2" id="cler">&nbsp;Reset<i class="fa fa-times"></i></button>
-    </div>
-</form>
-                
-</div>
 </div>
 
 
@@ -70,6 +94,11 @@
 <script>
     $(document).ready(function() {
         CKEDITOR.replace('txteditor');
+        $('#select_language').val('en');
+    });
+
+    $('#page_language').change(function() {
+        $('#select_language').val($(this).val());
     });
 </script>
 @endsection

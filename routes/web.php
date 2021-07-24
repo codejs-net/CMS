@@ -43,7 +43,9 @@ Route::group(['middleware' => ['auth']], function() {
     Route::POST('save_menu', [NavigationController::class, 'save_menu'])->name('save_menu');
 
     Route::resource('pages', PageController::class);
-    Route::get('edit_pages/{id}', [PageController::class, 'edit_pages'])->name('edit_pages');
+    Route::get('edit_pages/{id}', [PageController::class, 'edit'])->name('edit_pages');
+    Route::POST('update_page', [PageController::class, 'update_page'])->name('update_page');
+    Route::GET('page_detail', [PageController::class, 'page_detail'])->name('page_detail');
 
     Route::resource('posts', PostController::class);
 
