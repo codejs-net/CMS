@@ -500,4 +500,17 @@
   .page .icon-box .title a:hover {
     color: var(--color);
   }
+  .page .icon-heading .icon i {
+    color: var(--color);
+  }
+  
+  .page .icon-heading:hover .icon {
+    background: var(--background);
+    border-color: var(--dark);
+  }
+  
+  
+  .page .icon-heading .title a:hover {
+    color: var(--color);
+  }
  

@@ -2423,6 +2423,13 @@ section {
   position: relative;
   padding-bottom: 12px;
 }
+#footer .footer-top h3 {
+  font-weight: bold;
+  color: #313030;
+}
+#footer .footer-top p {
+  color: #313030;
+}
 
 #footer .footer-top .footer-links {
   margin-bottom: 30px;
@@ -2584,6 +2591,11 @@ section {
 .page .boxes h4 {
   font-size: 18px;
   color: #7f6d68;
+  /* margin-bottom: 15px; */
+}
+.page .boxes h5 {
+  font-size: 16px;
+  color: #7f6d68;
   margin-bottom: 15px;
 }
 
@@ -2603,6 +2615,7 @@ text-align: justify;
   font-weight: 700;
   color: #554945;
   margin-bottom: 15px;
+  text-align: center;
 }
 
 .page .icon-box {
@@ -2615,8 +2628,8 @@ text-align: justify;
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 64px;
-  height: 64px;
+  width: 50px;
+  height: 50px;
   border: 2px solid #ffcbba;
   border-radius: 50px;
   transition: 0.5s;
@@ -2638,7 +2651,7 @@ text-align: justify;
 }
 
 .page .icon-box .title {
-  margin-left: 85px;
+  /* margin-left: 85px; */
   font-weight: 700;
   margin-bottom: 10px;
   font-size: 18px;
@@ -2654,9 +2667,55 @@ text-align: justify;
 } */
 
 .page .icon-box .description {
-  margin-left: 85px;
+  /* margin-left: 85px; */
   line-height: 24px;
   font-size: 14px;
 }
 
+
+.page .icon-heading {
+  margin-top: 40px;
+ 
+}
+
+.page .icon-heading .icon {
+  text-align: center;
+  border: 2px solid #ffcbba;
+  border-radius: 90px;
+  transition: 0.5s;
+  background: #fff;
+}
+
+.page .icon-heading .icon i {
+  /* color: #ff5821; */
+  /* padding: 10px; */
+  margin: 3px;
+  font-size: 30px;
+}
+
+.page .icon-heading:hover .icon i {
+  color: #fff;
+}
+
+/* image effect */
+.page .img_ef {
+  /* width: 60%; */
+  transform-style: preserve-3d;
+  margin-left: auto;
+  margin-right: auto;
+  
+
+}
+.page .img_ef img {
+  width: 60%;
+  transform: rotateX(40deg) rotateZ(0deg) translate3d(-10px, 20px, 50px);
+  box-shadow: -60px 60px 30px 5px rgba(0,0,0,0.2);
+  transition: all .4s;
+  transform-style: preserve-3d;
+
+}
+.page .img_ef:hover img {
+  transform: rotateX(0deg) rotateZ(0deg) translate3d(0px, 0px, 0px);
+  box-shadow: 0px 0px 0px 0px rgba(0,0,0,0.0);
+}
 /*  */
