@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreatePagesTable extends Migration
+class CreatePageMediaTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,12 +13,14 @@ class CreatePagesTable extends Migration
      */
     public function up()
     {
-        Schema::create('pages', function (Blueprint $table) {
+        Schema::create('page_media', function (Blueprint $table) {
             $table->id();
-            $table->string('page')->nullable();
-            $table->string('page_type')->nullable();
-            $table->string('page_status')->nullable();
-            $table->string('link')->nullable();
+            $table->unsignedBigInteger('page_id')->nullable();
+            $table->foreign('page_id')->references('id')->on('pages');
+
+            $table->string('key')->nullable();
+            $table->string('path')->nullable();
+
             $table->timestamps();
         });
     }
@@ -30,6 +32,6 @@ class CreatePagesTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('pages');
+        Schema::dropIfExists('page_media');
     }
 }

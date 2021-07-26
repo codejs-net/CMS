@@ -27,7 +27,15 @@ class WebController extends Controller
 
     public function about()
     {
-        return view('web.pages.about.about');
+        $menulist = navigation::tree();
+        return view('web.page.about_area')
+        ->with('menulist',$menulist);
+    }
+    public function about_agency()
+    {
+        $menulist = navigation::tree();
+        return view('web.page.about_agency')
+        ->with('menulist',$menulist);
     }
     public function blog_index()
     {

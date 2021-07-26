@@ -27,6 +27,8 @@ Route::get('lang/{locale}', [LocalizationController::class, 'index'])->name('lan
 // --------Web--------------------------------
 Route::get('/', [WebController::class, 'index'])->name('/');
 Route::get('home', [WebController::class, 'index'])->name('home');
+Route::get('about', [WebController::class, 'about'])->name('about');
+Route::get('about_agency', [WebController::class, 'about_agency'])->name('about_agency');
 Route::get('page/{id}', [WebController::class, 'page'])->name('page');
 Route::get('post/{id}', [WebController::class, 'post'])->name('post');
 
@@ -38,7 +40,8 @@ Route::group(['middleware' => ['auth']], function() {
     Route::get('publish_tranlation', [TranslationController::class, 'publish_tranlation'])->name('publish_tranlation');
 
     Route::resource('navigations', NavigationController::class);
-    Route::POST('add_menu_item', [NavigationController::class, 'add_menu_item'])->name('add_menu_item');
+    Route::POST('add_menu_item_custom', [NavigationController::class, 'add_menu_item_custom'])->name('add_menu_item_custom');
+    Route::POST('add_menu_item_page', [NavigationController::class, 'add_menu_item_page'])->name('add_menu_item_page');
     Route::get('load_menu_item', [NavigationController::class, 'load_menu_item'])->name('load_menu_item');
     Route::POST('save_menu', [NavigationController::class, 'save_menu'])->name('save_menu');
 

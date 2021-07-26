@@ -2574,3 +2574,89 @@ section {
   padding: 5px;
   border-radius: 5px;
 }
+
+/*--------------------------------------------------------------
+# pages
+--------------------------------------------------------------*/
+#page{
+  margin-bottom: 30px;
+}
+.page .boxes h4 {
+  font-size: 18px;
+  color: #7f6d68;
+  margin-bottom: 15px;
+}
+
+.page .boxes p {
+text-align: justify;
+}
+
+.page .boxes {
+  /* margin-top: 40px; */
+  background: #fff;
+  box-shadow: 0px 2px 15px rgba(0, 0, 0, 0.1);
+  padding: 20px 20px;
+}
+
+.page .boxes h3 {
+  font-size: 28px;
+  font-weight: 700;
+  color: #554945;
+  margin-bottom: 15px;
+}
+
+.page .icon-box {
+  margin-top: 40px;
+ 
+}
+
+.page .icon-box .icon {
+  float: left;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 64px;
+  height: 64px;
+  border: 2px solid #ffcbba;
+  border-radius: 50px;
+  transition: 0.5s;
+  background: #fff;
+}
+
+.page .icon-box .icon i {
+  /* color: #ff5821; */
+  font-size: 32px;
+}
+
+/* .page .icon-box:hover .icon {
+  background: #ff5821;
+  border-color: #ff5821;
+} */
+
+.page .icon-box:hover .icon i {
+  color: #fff;
+}
+
+.page .icon-box .title {
+  margin-left: 85px;
+  font-weight: 700;
+  margin-bottom: 10px;
+  font-size: 18px;
+}
+
+.page .icon-box .title a {
+  color: #343a40;
+  transition: 0.3s;
+}
+
+/* .page .icon-box .title a:hover {
+  color: #ff5821;
+} */
+
+.page .icon-box .description {
+  margin-left: 85px;
+  line-height: 24px;
+  font-size: 14px;
+}
+
+/*  */
