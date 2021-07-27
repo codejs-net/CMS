@@ -37,6 +37,13 @@ class WebController extends Controller
         return view('web.page.about_agency')
         ->with('menulist',$menulist);
     }
+    public function service()
+    {
+        $menulist = navigation::tree();
+        return view('web.page.service')
+        ->with('menulist',$menulist);
+    }
+
     public function blog_index()
     {
         return view('web.pages.blog.index');

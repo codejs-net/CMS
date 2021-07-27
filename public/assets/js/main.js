@@ -159,6 +159,13 @@
     }, 1500, 'easeInOutExpo');
     return false;
   });
+
+  // $('.to-navigate').click(function() {
+  //   $('html, body').animate({
+  //     // scrollTop: 0
+  //   }, 1000, 'easeInOutExpo');
+  //   return false;
+  // });
   // Initiate the venobox plugin
   $(window).on('load', function() {
     $('.venobox').venobox();

@@ -29,6 +29,9 @@ Route::get('/', [WebController::class, 'index'])->name('/');
 Route::get('home', [WebController::class, 'index'])->name('home');
 Route::get('about', [WebController::class, 'about'])->name('about');
 Route::get('about_agency', [WebController::class, 'about_agency'])->name('about_agency');
+
+Route::get('service', [WebController::class, 'service'])->name('service');
+
 Route::get('page/{id}', [WebController::class, 'page'])->name('page');
 Route::get('post/{id}', [WebController::class, 'post'])->name('post');
 
