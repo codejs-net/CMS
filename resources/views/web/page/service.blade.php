@@ -9,15 +9,13 @@
 <section id="page" class="page section-bg">
   <div class="container-fuild">
     {{-- ----- --}}
-    <div class="row mr-3">
-      <div class="col-md-3 col-6">
-
-     
+    <div class="row mr-3 mb-5">
+      <div class="col-md-2 col-12">
+        <div id="menu-heading" class="" style="display: none"><h6>Services menu</h6></div>
          <!-- Sidebar -->
          <div class="sidebar">
-
           <nav class="mt-2 js-sidebar-text py-2">
-              <ul class="nav nav-pills nav-sidebar flex-column " data-widget="treeview" role="menu" data-accordion="false">
+            <ul class="nav nav-pills nav-sidebar flex-column " data-widget="treeview" role="menu" data-accordion="false">
               
                 <!------------Establishment----------->
                   <li class="nav-item has-treeview menu-open">
@@ -194,21 +192,22 @@
                       </a>
                     </li>  
                 </ul>
-            </li>
+              </li>
 
 
-              </ul>
-          </nav>
+        </ul>
+      </nav>
           <!-- /.sidebar-menu -->
       </div>
+      <br>
     </div>
     
-    <div class="col-md-9 col-6 boxes d-flex flex-column align-items-stretch justify-content-center py-2 px-lg-5">
-      
+    <div class="col-md-10 col-12">
+      <div class="box-section boxes d-flex flex-column align-items-stretch justify-content-center py-2 px-lg-5">
       <div class="icon-heading" data-aos="fade-up">
         <h3 class="" data-aos="fade-up"><span class=" icon"><i class="bx bx-home"></i></span>&nbsp; සේවාවන්</h3>
       </div>
-      
+      {{-- ############################### category1 ##################################--}}
       <div class="icon-box">
         <div class="row heading-row" data-aos="fade-up">
           <div class="col-12">
@@ -216,7 +215,7 @@
           </div>
         </div>
         {{-- ------------ --}}
-        <div class="row">
+        <div class="row mb-3" data-aos="fade-up">
           <div class="col-md-1 col-1">
             <div class="icon"><i class="bx bx-pin"></i></div>
           </div>
@@ -230,7 +229,7 @@
           </div>
         </div>
         {{-- ------------- --}}
-        <div class="row">
+        <div class="row mb-3" data-aos="fade-up">
           <div class="col-md-1 col-1">
             <div class="icon"><i class="bx bx-pin"></i></div>
           </div>
@@ -244,13 +243,142 @@
           </div>
         </div>
         {{-- -------------- --}}
+        <div class="row mb-3" data-aos="fade-up">
+          <div class="col-md-1 col-1">
+            <div class="icon"><i class="bx bx-pin"></i></div>
+          </div>
+          <div class="col-md-11 col-11" id="service1">
+            <h4 class="title"><a href="">සුසාන භූමි හා ආදාහනාගාර සේවාව</a></h4>
+            <p>ප්‍රාදේශීය සභා බල ප්‍රදේශය තුල සියලු සුසාන භූමි නඩත්තු කරමින් පවත්වා ගෙන යාම ප්‍රදේශීය සභාව මගින් සිදු කරනු ලැබේ.</p>
+            <ul>
+              <li>ආදාහනාගාර සේවාව සැපයීමේ දී මරණ සහතිකය සහ ප්‍රාදේශීය සභා‍වේ සභාපතිවරයා වෙතින් කරනු ලබන ලිඛිත ඉල්ලීමක් ද සමග  ප්‍රාදේශීය සභා‍වේ ලේකම් වෙත අයදුම් පතක් ඉදිරිපත් කල යුතු වේ</li>
+              <li>අදාල ගාස්තුව අය කිරීමෙන් අනතුරුව ප්‍රාදේශීය සභා‍වේ සභාපතිවරයා විසින් අනුමැතිය ලබා දේ.</li>
+            </ul>
+            <div class="d-flex justify-content-left mt-2 mb-3 img_ef">
+              <img src="{{ asset('assets/img/services/adahanagara.jpg') }}" class="img" alt="agency" >
+            </div>
+
+            <hr>
+          </div>
+        </div>
+        {{-- -------------- --}}
+        <div class="row mb-3" data-aos="fade-up">
+          <div class="col-md-1 col-1">
+            <div class="icon"><i class="bx bx-pin"></i></div>
+          </div>
+          <div class="col-md-11 col-11" id="service1">
+            <h4 class="title"><a href="">පැමිණිලි කළමනාකරණය</a></h4>
+            <p>බුලත්කොහුපිටිය ප්‍රාදේශීය සභා බල ප්‍රදේශයේ මහඡනතාව විසින් ඉදිරිපත් කරනු ලබන විවිධ පැමිණිලි පිළිබදව ස්ථානීය පරීක්ෂණයක් සිදු කොට එම ගැටලු සමතයකට පත්කර දීම ද මෙම ප්‍රාදේශීය සභා‍ව මගින් සිදු කරයි.</p>
+            <div class="d-flex justify-content-left mt-2 img_ef">
+              <img src="{{ asset('assets/img/services/court.jpg') }}" class="img" alt="agency" >
+            </div>
+            <hr>
+          </div>
+        </div>
+        {{-- -------------- --}}
+      </div>
+
+       {{-- ############################### category2 ##################################--}}
+      <div class="icon-box">
+        <div class="row heading-row" data-aos="fade-up">
+          <div class="col-12">
+            <h4 class=""><a href="">සංවර්ධන සේවාවන්</a></h4>
+          </div>
+        </div>
+        {{-- ------------ --}}
+        <div class="row mb-3" data-aos="fade-up">
+          <div class="col-md-1 col-1">
+            <div class="icon"><i class="bx bx-pin"></i></div>
+          </div>
+          <div class="col-md-11 col-11" id="service1">
+            <h4 class="title"><a href="">ගොඩනැගිලි සැලසුම් අනුමත කිරීම</a></h4>
+            <p>ප්‍රාදේශීය සභා‍වක් විසින් සිය බල ප්‍රදේශය තුල පිහිටි සියලු ඉදිකිරීමේ ක්‍රියාකාරකම් පාලනය හා නියාමනය කරයි. ඒ අනුව ප්‍රාදේශීය සභා‍ බල ප්‍රදේශය තුල ඉදි කිරීම් ක්‍රියාකාරකම්වල යෙදෙන සියලුම පුද්ගලයින් මෙම ප්‍රාදේශීය සභා‍වෙන් බලපත්‍රයක් ලබා ගත යුතුය.</p>
+            <p>බුලත්කොහුපිටිය ප්‍රාදේශීය සභා‍ බල ප්‍රදේශයේ ග්‍රාම නිළධාරී වසම් 14ක් 1978 අංක 41 දරණ නාගරික සංවර්ධන අධිකාරි පනත යටතේ නාගරික සංවර්ධන ප්‍රදේශයක් ලෙස ප්‍රකාශයට පත් කොට ඇති බැවින් එම නීති රීති වලට අනුකූලව ඉදිකිරීම් කටයුතු සිදු කල යුතුය.</p>
+            <div class="d-flex justify-content-left mt-2 mb-3 img_ef">
+              <img src="{{ asset('assets/img/services/plan.jpg') }}" class="img" alt="agency" >
+            </div>
+            <h5 class=""><a href="">ගොඩනැගිලි සැලසුම් අනුමත කිරීමේ පියවර</a></h5>
+            <ul>
+              <li>ගොඩනැගිලි අයදුම් පත්‍රයක් අදාල මුදල් ගෙවා ප්‍රාදේශීය සභා කාර්යාලයෙන් ලබා ගත යුතුය.</li>
+              <li>එම සම්පූර්ණ කල අයදුම් පත සමග අනුමත කිරීමට ඇති ගොඩනැගිල්ලේ සැලැස්ම, එහි ඡායා පිටපත් 3 ක්, අනුමත ඉඩමේ සැලැස්ම හා එහි ඡායා පිටපතක්, ඔප්පුවේ පිටපතක් සහ පත්තිරු විෂය නිළධාරී වෙත ලබා දී පරීක්ෂණ ගාස්තු ගෙවා ලදු පතක් ලබා ගත යුතුය.( මේ පිළිබද විස්තර අයදුම් පතෙහි සදහන් කර ඇත.)</li>
+              <li>ඉන්පසු සභාවේ තාක්ෂණ නිලධාරි විසින් අදාල ස්ථානය පරීක්ෂා කරනු ලබන අතර ඔවුන්ගේ නිර්දේශය සමග එම ලිපි ගොනු සැලසුම් කමිටුවට ඉදිරිපත් කිරීමෙන් අනතුරුව අනුමැතිය ලබා දෙනු ලැබේ.</li>
+              <li>අනුමත මුද්‍රාව තැබීමෙන් පසුව ගොඩනැගිල්ලේ වර්ග අඩි ප්‍රමාණයට මුදල් ගෙවා අදාල අනුමත සැලැස්ම ලබාගත හැකි වේ.(වැඩිදුර විස්තර එම අයදුම් පතෙහි සදහන් කොට ඇත.)</li>
+            </ul>
+            <hr>
+          </div>
+        </div>
+        {{-- ------------- --}}
+        <div class="row mb-3" data-aos="fade-up">
+          <div class="col-md-1 col-1">
+            <div class="icon"><i class="bx bx-pin"></i></div>
+          </div>
+          <div class="col-md-11 col-11" id="service1">
+            <h4 class="title"><a href="">බිම් කට්ටි අනුමත කිරීම</a></h4>
+            <p>ප්‍රාදේශීය සභා‍ බල ප්‍රදේශය තුල සිදු කෙරෙන සියලු ඉඩම් සංවර්ධනය කිරීම් හා කොටස් වලට කැඩීම්  පළමුව ප්‍රාදේශීය සභා‍වේ ලියාපදිංචි කල යුතුය. මෙහි අරමුණ නගරික ප්‍රදේශයන් හි ඉඩම් සංවර්ධනය  කිරීමේ ක්‍රියාකාරකම් නියාමනය කිරීමයි.</p>
+            <div class="d-flex justify-content-left mt-2 mb-3 img_ef">
+              <img src="{{ asset('assets/img/services/land.jpg') }}" class="img" alt="agency" >
+            </div>
+            <h5 class=""><a href="">බිම් කට්ටි අනුමත කිරීම සඳහා සුදුසුකම්</a></h5>
+            <ul>
+              <li>ප්‍රාදේශීය සභා‍ බල ප්‍රදේශය තුල පිහිටා ඇති කොටස් වලට කැඩීම හෝ සංවර්ධනය කිරීමට නියමිත ඉඩමක හිමිකරුවෙකු විය යුතුය.</li>
+              <li>හිමිකරු සතුව ලියාපදිංචි ඔප්පුවක් තිබිය යුතුය.</li>
+            </ul>
+
+            <h5 class=""><a href="">බිම් කට්ටි අනුමත කිරීමේ පියවර</a></h5>
+            <ul>
+              <li>ඉඩම් අනුබෙදුම් අයදුම් පත්‍රයක් මුදල් ගෙවා ප්‍රාදේශීය සභා කාර්යාලයෙන් ලබා ගැනීම.</li>
+              <li>එම සම්පූර්ණ කල අයදුම් පත සමග අනුමත කිරීමට ඇති ඉඩමේ සැලැස්ම, එහි ඡායා පිටපතක්, මුල් සැලසුම්වල පිටපත් සහ අදාල ඔප්පුවේ පිටපතක් විෂය නිළධාරී වෙත ලබා දීම. (මේ පිළිබද විස්තර අයදුම් පතෙහි සදහන් කර ඇත.)</li>
+              <li>ඉන්පසු සභාවේ තාක්ෂණ නිලධාරියෙකු විසින් ඉඩම පරීක්ෂා කරනු ලබන අතර එම ලිපි ගොනු සැලසුම් කමිටුවට ඉදිරිපත් කිරීමෙන් අනතුරුව අනුමැතිය ලබා දෙනු ලැබේ.</li>
+              <li>අනතුරුව ඉඩමේ තාවකාලික වටිනාකම් තක්සේරුවක් අනුව මුදල් ගෙවා ලදුපතක් ලබා ගත යුතුය</li>
+              <li>අනුමත මුද්‍රාව තැබීමෙන් පසුව අදාල අනුමත සැලැස්ම ලබාගත හැකි වේ. (වැඩිදුර විස්තර එම අයදුම් පතෙහි සදහන් කොට ඇත.)</li>
+            </ul>
+            <hr>
+          </div>
+        </div>
+        {{-- -------------- --}}
+        <div class="row mb-3" data-aos="fade-up">
+          <div class="col-md-1 col-1">
+            <div class="icon"><i class="bx bx-pin"></i></div>
+          </div>
+          <div class="col-md-11 col-11" id="service1">
+            <h4 class="title"><a href="">වීථීරේඛා සහ නොපවරවා ගැනීමේ සහතික නිකුත් කිරීම</a></h4>
+            <p>ඔබගේ අවශ්‍යතාවයන් සඳහා වීථීරේඛා සහ නොපවරවා ගැනීමේ සහතික නිකුත් කිරීම ප්‍රාදේශීය සභාව මඟින් සිදු කරයි</p>
+            <div class="d-flex justify-content-left mt-2 mb-2 img_ef">
+              <img src="{{ asset('assets/img/services/certificate.jpg') }}" class="img" alt="agency" >
+            </div>
+            <h5 class=""><a href="">වීථීරේඛා සහ නොපවරවා ගැනීමේ සහතික ලබාගැනීමේ පියවර</a></h5>
+            <ul>
+              <li>අදාළ අයදුම්පත්‍රය මුදල් ගෙවා ප්‍රාදේශීය සභා කාර්යාලයෙන් ලබා ගත යුතුය.</li>
+              <li>සම්පූර්ණ කරන ලද අයදුම්පත ඉඩමේ මානක සැලැස්ම, ඔප්පුව සහ පත්තිරු වල පිටපත් සමඟ විෂය නිළධාරී වෙත භාරදිය යුතුය</li>
+              <li>තාක්ෂණික නිළධාරීගේ/ ආදායම් පරීක්ෂකගේ ස්ථානීය පරීක්ෂාවෙන් අනතුරුව ලේකම් විසින් නිර්දේශ කිරීම හා සභාපති විසින් අනුමත කිරීම සිදු කරයි.</li>
+              <li>ඉන් පසු මුදල් ගෙවා සහතික පත් ලබා ගත හැක</li>
+            </ul>
+
+            <hr>
+          </div>
+        </div>
+        {{-- -------------- --}}
+        <div class="row mb-3" data-aos="fade-up">
+          <div class="col-md-1 col-1">
+            <div class="icon"><i class="bx bx-pin"></i></div>
+          </div>
+          <div class="col-md-11 col-11" id="service1">
+            <h4 class="title"><a href="">මාර්ග සංවර්ධනය</a></h4>
+            <p>මාර්ග සංවර්ධන අධිකාරිය සහ පළාත්බඳ මාර්ග සංවර්ධන අධිකාරියට අයත් නොවන පොදු අරමුදල් යොදවා සංවර්ධනය කරන ලද සියලු මාර්ග සහ සංවර්ධනය කිරීමට යෝජිත මාර්ග සංවර්ධන සඳහා අවශ්‍ය ක්‍රියාමාර්ග ගැනීම.  (ප්‍රාදේශීය සභා බල ප්‍රදේශය තුළ)</p>
+            <div class="d-flex justify-content-left mt-2 img_ef">
+              <img src="{{ asset('assets/img/services/road.jpg') }}" class="img" alt="agency" >
+            </div>
+            <hr>
+          </div>
+        </div>
+        {{-- -------------- --}}
       </div>
 
 
 
       
 
-
+    </div>
     </div>
 
 
@@ -265,4 +393,14 @@
 
   @section('script')
   <script src="{{ asset('js/adminlte.js') }}"></script>
+  <script>
+
+  $(window).scroll(function() {
+      if ($(this).scrollTop() > 100) {
+      $('#menu-heading').fadeIn('slow');
+      } else {
+        $('#menu-heading').fadeOut();
+      }
+    });
+  </script>
   @endsection
