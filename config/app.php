@@ -176,12 +176,6 @@ return [
         App\Providers\RouteServiceProvider::class,
         Spatie\Permission\PermissionServiceProvider::class,
         Spatie\Backup\BackupServiceProvider::class,
-        Maatwebsite\Excel\ExcelServiceProvider::class,
-        Milon\Barcode\BarcodeServiceProvider::class,
-        //Barryvdh\DomPDF\ServiceProvider::class,
-        Yajra\DataTables\DataTablesServiceProvider::class,
-        Artisaninweb\SoapWrapper\ServiceProvider::class, 
-        niklasravnsborg\LaravelPdf\PdfServiceProvider::class
     ],
 
     /*
@@ -233,13 +227,6 @@ return [
         'URL' => Illuminate\Support\Facades\URL::class,
         'Validator' => Illuminate\Support\Facades\Validator::class,
         'View' => Illuminate\Support\Facades\View::class,
-        'Excel' => Maatwebsite\Excel\Facades\Excel::class,
-        'DNS1D' => Milon\Barcode\Facades\DNS1DFacade::class,
-        'DNS2D' => Milon\Barcode\Facades\DNS2DFacade::class,
-        //'PDF' => Barryvdh\DomPDF\Facade::class,
-        'DataTables' => Yajra\DataTables\Facades\DataTables::class,
-        'SoapWrapper' => Artisaninweb\SoapWrapper\Facade\SoapWrapper::class,
-        'PDF' => niklasravnsborg\LaravelPdf\Facades\Pdf::class
 
     ],
 

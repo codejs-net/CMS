@@ -49,11 +49,7 @@ class LoginController extends Controller
 
     // public function showLoginForm()
     // {
-    //     $locale = session()->get('locale');
-    //     if(empty($locale))
-    //     {
-    //         Session::put('locale', 'si');
-    //     }
+    //    
     //     return redirect()->route('lmslogin.index');
         
     // }

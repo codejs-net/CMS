@@ -37,11 +37,7 @@
     <!-- overlayScrollbars -->
     <link rel="stylesheet" href="{{ asset('plugins/overlayScrollbars/css/OverlayScrollbars.min.css') }}">
 
-    <!-- datatables -->
-    <link rel="stylesheet" href="{{ asset('plugins/datatables-bs4/css/dataTables.bootstrap4.min.css') }}">
-    <link rel="stylesheet" href="{{ asset('plugins/datatables-responsive/css/responsive.bootstrap4.min.css') }}">
-    
-    <link rel="stylesheet" href="{{ asset('plugins/fullcalendar-bootstrap/main.min.css') }}">
+  
      <!-- Fonts -->
      <link rel="dns-prefetch" href="//fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
@@ -60,11 +56,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Archivo&family=Roboto:wght@300&display=swap" rel="stylesheet"> 
     <link href="https://fonts.googleapis.com/css2?family=Abhaya+Libre&display=swap" rel="stylesheet">
 
-    <!-- SmartWizard -->
-    <link href="{{ asset('plugins/smart_wizard/css/smart_wizard.min.css') }}" rel="stylesheet">
-
-    {{-- --Editor --}}
-    <link href="{{ asset('plugins/editor/css/editor.css') }}" rel="stylesheet">
+  
 
      <!-- Site Custom -->
      <link href="{{ asset('css/site.css') }}" rel="stylesheet">
@@ -158,35 +150,19 @@
     <!-- AdminLTE App -->
     <script src="{{ asset('js/adminlte.js') }}"></script>
     
-    <!-- ChartJS -->
-    <script src="{{ asset('plugins/chart.js/Chart.min.js') }}"></script>
+
     <!-- ChartJS -->
     <script src="{{ asset('plugins/apex/apexcharts.js') }}"></script>
 
-    <!-- smart_wizard -->
-    <script src="{{ asset('plugins/smart_wizard/js/smart_wizard.min.js') }}"defer></script>
 
     <!-- select2 -->
     <script src="{{ asset('plugins/select2/js/select2.min.js') }}"defer></script>
     <script src="{{ asset('plugins/select2/js/select2.full.min.js') }}"defer></script>
     
-    {{-- <script src="//cdnjs.cloudflare.com/ajax/libs/lodash.js/4.15.0/lodash.min.js"defer></script>
-    <script src="//cdnjs.cloudflare.com/ajax/libs/select2/3.5.4/select2.min.js"defer></script> --}}
-    <!-- <script>
-    $.widget.bridge('uibutton', $.ui.button)
-    </script> -->
-  
-    <!-- jQuery-Datatable -->
-  <script src="{{ asset('plugins/datatables-jquery/js/jquery.dataTables.min.js') }}" defer></script>
-  <!-- <script src="{{ asset('plugins/datatables-responsive/js/dataTables.responsive.min.js') }}" defer></script> -->
 
-  <script src="{{ asset('plugins/datatables-bs4/js/dataTables.bootstrap4.min.js') }}" defer></script>
-  <!-- <script src="{{ asset('plugins/datatables-responsive/js/responsive.bootstrap4.min.js') }}" defer></script> -->
-  <script src="{{ asset('plugins/datatables-bs4/js/natural.js') }}" defer></script>
 
   <!-- <script src="{{ asset('plugins/popper/popper.js.map') }}" defer></script> -->
 
-  <script src="{{ asset('plugins/editor/js/editor.js') }}" defer></script>
 
     <!-- ======================================================================== -->
 
