@@ -2729,24 +2729,46 @@ text-align: justify;
   background: #fff;
   box-shadow: 0px 2px 15px rgba(0, 0, 0, 0.1);
   border-radius: 10px;
-  width:230px;
-  height:auto !important;
+  width:210px;
+  height:auto !important ;
   max-height: 450px !important;
   overflow: auto;
   margin-left: 10px !important;
   font-size: 12px;
 }
+@media (max-width: 768px) {
+  .sidebar{
+    position: relative;
+    width: auto;
+  }
+  #menu-heading{
+    position: absolute;
+    background-color: #fff !important;
+  }
+  .page .icon-box .icon {
+    width: 25px;
+    height: 25px;
+  }
+  .page .icon-box .icon i {
+    font-size: 16px !important;
+  }
+  .heading-row{
+    margin-left: 10px !important;
+    margin-right: 10px !important;
+  }
+}
+
 #menu-heading{
   position: fixed;
   top: 110px;
-  margin-left: 30px;
+  margin-left: 15px;
   font-family: Georgia, 'Times New Roman', Times, serif;
   background-color: rgb(255, 102, 0);
   color: #fff;
   padding: 3px;
   padding-top: 5px;
   border-radius: 20px;
-  width: 200px;
+  width: 180px;
   text-align: center;
   align-items: center;
   justify-content: center;
