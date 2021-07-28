@@ -4,13 +4,13 @@ $locale = session()->get('locale');
 
 function MenuItem($id, $key, $url)
 {
-  $menu='<li><a href="'.$url.'">'.trans($key).'</a></li>';
+  $menu='<li><a href="'.url($url).'">'.trans($key).'</a></li>';
   return $menu; 
 }
 
 function SubMenuItem($id, $key, $url)
 {
-  $menu='<li class="drop-down"><a href="'.$url.'">'.trans($key).'</a>';
+  $menu='<li class="drop-down"><a href="'.url($url).'">'.trans($key).'</a>';
   return $menu; 
 }
 

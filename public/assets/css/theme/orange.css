@@ -480,3 +480,37 @@
     background-color: var(--background)
   }
   
+  
+  /*--------------------------------------------------------------
+  # page
+  --------------------------------------------------------------*/
+ 
+  
+  .page .icon-box .icon i {
+    color: var(--color);
+    font-size: 32px;
+  }
+  
+  .page .icon-box:hover .icon {
+    background: var(--background);
+    border-color: var(--dark);
+  }
+  
+  
+  .page .icon-box .title a:hover {
+    color: var(--color);
+  }
+  .page .icon-heading .icon i {
+    color: var(--color);
+  }
+  
+  .page .icon-heading:hover .icon {
+    background: var(--background);
+    border-color: var(--dark);
+  }
+  
+  
+  .page .icon-heading .title a:hover {
+    color: var(--color);
+  }
+ 

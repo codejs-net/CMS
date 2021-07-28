@@ -4,19 +4,20 @@ namespace App\Http\Controllers\Web;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\navigation;
+use App\Models\page;
 
 
 class NavigationController extends Controller
 {
     public function index(Request $request)
     {
-        // $navdata = navigation::select('*')->get();
-        return view('app.navigation.index');
+        $pagedata = page::select('*')->get();
+        return view('app.navigation.index')
+            ->with('pagedata',$pagedata);
     
     }
-    public function add_menu_item(Request $request)
+    public function add_menu_item_custom(Request $request)
     {
-        error_log("------------------------------".$request->perant);
         $key_parent="";
         if(!$request->perant=='0')
         {
@@ -30,6 +31,28 @@ class NavigationController extends Controller
             'parent_id' =>  $request->perant | 0, 
             'key'       =>  $key, 
             'link'      =>  $request->link, 
+        );
+        navigation::create($menu_data);
+
+        return response()->json(['status' => "success",'data'=>$menu_data]);
+    
+    }
+    public function add_menu_item_page(Request $request)
+    {
+        $page = page::find($request->page);
+        $key_parent="";
+        if(!$request->perant=='0')
+        {
+            $prow = navigation::where('id', $request->perant)->first();
+            $key_parent=$prow->item.'.';
+        }
+        $key="Menu-".$key_parent.$page->page;
+        $menu_data = array(
+            'section'   =>  "Menu",
+            'item'      =>  $page->page,
+            'parent_id' =>  $request->perant | 0, 
+            'key'       =>  $key, 
+            'link'      =>  $page->link, 
         );
         navigation::create($menu_data);
 

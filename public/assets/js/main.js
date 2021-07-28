@@ -9,7 +9,7 @@
 
   // Smooth scroll for the navigation menu and links with .scrollto classes
   var scrolltoOffset = $('#header').outerHeight() - 1;
-  $(document).on('click', '.nav-menu a, .mobile-nav a, .scrollto', function(e) {
+  $(document).on('click', '.nav-menu a, .mobile-nav a, .scrollto, .sidebar a', function(e) {
     if (location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '') && location.hostname == this.hostname) {
       var target = $(this.hash);
       if (target.length) {
@@ -159,6 +159,13 @@
     }, 1500, 'easeInOutExpo');
     return false;
   });
+
+  // $('.to-navigate').click(function() {
+  //   $('html, body').animate({
+  //     // scrollTop: 0
+  //   }, 1000, 'easeInOutExpo');
+  //   return false;
+  // });
   // Initiate the venobox plugin
   $(window).on('load', function() {
     $('.venobox').venobox();

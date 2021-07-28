@@ -2423,6 +2423,13 @@ section {
   position: relative;
   padding-bottom: 12px;
 }
+#footer .footer-top h3 {
+  font-weight: bold;
+  color: #313030;
+}
+#footer .footer-top p {
+  color: #313030;
+}
 
 #footer .footer-top .footer-links {
   margin-bottom: 30px;
@@ -2573,4 +2580,230 @@ section {
   /* background-color: #ff774a; */
   padding: 5px;
   border-radius: 5px;
+}
+
+/*--------------------------------------------------------------
+# pages
+--------------------------------------------------------------*/
+/* #page{
+  margin-bottom: 30px;
+} */
+.page .boxes h4 {
+  font-size: 16px !important;
+  color: #7f6d68;
+  /* margin-bottom: 15px; */
+}
+.page .boxes h5 {
+  font-size: 16px;
+  color: #7f6d68;
+  margin-bottom: 15px;
+}
+
+.page .boxes p {
+text-align: justify;
+}
+
+.page .boxes {
+  /* margin-top: 40px; */
+  background: #fff;
+  box-shadow: 0px 2px 15px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+
+}
+.box-section{
+  margin-left: 5px;
+}
+
+.page .boxes h3 {
+  font-size: 28px;
+  font-weight: 700;
+  color: #554945;
+  margin-bottom: 15px;
+  text-align: center;
+}
+
+.page .icon-box {
+  margin-top: 20px;
+ 
+}
+
+.page .icon-box .icon {
+  float: left;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 50px;
+  height: 50px;
+  border: 2px solid #ffcbba;
+  border-radius: 50px;
+  transition: 0.5s;
+  background: #fff;
+}
+
+.page .icon-box .icon i {
+  /* color: #ff5821; */
+  font-size: 32px;
+}
+
+/* .page .icon-box:hover .icon {
+  background: #ff5821;
+  border-color: #ff5821;
+} */
+
+.page .icon-box:hover .icon i {
+  color: #fff;
+}
+
+.page .icon-box .title {
+  /* margin-left: 85px; */
+  font-weight: 700;
+  margin-bottom: 10px;
+  font-size: 18px;
+}
+
+.page .icon-box .title a {
+  color: #343a40;
+  transition: 0.3s;
+}
+
+/* .page .icon-box .title a:hover {
+  color: #ff5821;
+} */
+
+.page .icon-box .description {
+  /* margin-left: 85px; */
+  line-height: 24px;
+  font-size: 14px;
+}
+
+
+.page .icon-heading {
+  margin-top: 30px;
+ 
+}
+
+.page .icon-heading .icon {
+  text-align: center;
+  border: 2px solid #ffcbba;
+  border-radius: 90px;
+  transition: 0.5s;
+  background: #fff;
+}
+
+.page .icon-heading .icon i {
+  /* color: #ff5821; */
+  /* padding: 10px; */
+  margin: 3px;
+  font-size: 30px;
+}
+
+.page .icon-heading:hover .icon i {
+  color: #fff;
+}
+
+/* image effect */
+.page .img_ef {
+  /* width: 60%; */
+  transform-style: preserve-3d;
+  margin-left: auto;
+  margin-right: auto;
+  
+
+}
+.page .img_ef img {
+  width: 50%;
+  transform: rotateX(40deg) rotateZ(0deg) translate3d(-10px, 20px, 50px);
+  box-shadow: -60px 60px 30px 5px rgba(0,0,0,0.2);
+  transition: all .4s;
+  transform-style: preserve-3d;
+
+}
+.page .img_ef:hover img {
+  transform: rotateX(0deg) rotateZ(0deg) translate3d(0px, 0px, 0px);
+  box-shadow: 0px 0px 0px 0px rgba(0,0,0,0.0);
+}
+/*  */
+.sidebar{
+  position: fixed;
+  top: auto !important;
+  background: #fff;
+  box-shadow: 0px 2px 15px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+  width:210px;
+  height:auto !important ;
+  max-height: 450px !important;
+  overflow: auto;
+  margin-left: 10px !important;
+  font-size: 12px;
+}
+@media (max-width: 768px) {
+  .sidebar{
+    position: relative;
+    width: auto;
+  }
+  #menu-heading{
+    position: absolute;
+    background-color: #fff !important;
+  }
+  .page .icon-box .icon {
+    width: 25px;
+    height: 25px;
+  }
+  .page .icon-box .icon i {
+    font-size: 16px !important;
+  }
+  .heading-row{
+    margin-left: 10px !important;
+    margin-right: 10px !important;
+  }
+}
+
+#menu-heading{
+  position: fixed;
+  top: 110px;
+  margin-left: 15px;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  background-color: rgb(255, 102, 0);
+  color: #fff;
+  padding: 3px;
+  padding-top: 5px;
+  border-radius: 20px;
+  width: 180px;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+  
+}
+.sidebar {
+  scrollbar-width: thin;
+  scrollbar-color: rgb(255, 102, 0) #fff;
+}
+
+/* Works on Chrome, Edge, and Safari */
+.sidebar::-webkit-scrollbar {
+  width: 8px;
+}
+
+.sidebar::-webkit-scrollbar-track {
+  background: #fff;
+}
+
+.sidebar::-webkit-scrollbar-thumb {
+  background-color: rgb(236, 199, 184);
+  border-radius: 5px;
+  /* border: 3px solid rgb(255, 102, 0); */
+}
+
+/* ----services---- */
+.heading-row{
+  background: rgb(184,221,246);
+  background: linear-gradient(90deg, rgba(184,221,246,1) 0%, rgba(242,242,242,1) 35%, rgba(184,222,242,1) 100%); 
+  padding: 8px;
+  border-radius: 20px;
+  margin-bottom: 30px;
+  color: #000;
+}
+.heading-row h4 a{
+  color: #000;
+  font-weight: bold;
 }

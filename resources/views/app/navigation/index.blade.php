@@ -45,8 +45,49 @@ $name="name".$lang;
                             <div class="col ml-3">
                                 <a  class="filter_section" href="" data-toggle="collapse" data-target="#page_item"><i class="fa fa-plus" aria-hidden="true"></i>&nbsp;<u>Page</u></a>
                             </div>
-                            <div id="page_item" class="collapse">
-    
+                            <div id="page_item" class="collapse show">
+                                <form method="post" id="page_form" class="needs-validation"  novalidate>
+                                    {{ csrf_field() }}
+                                    <div class="row mx-2">
+                                        <div class="col-9 col-md-9">
+                                            <div class="form-group">
+                                                <label for="page">{{__('Page')}} : </label>
+                                                <select class="form-control"name="page" value="{{old('page')}}"required>
+                                                    <option value="" disabled selected>{{__('Select Page')}}</option>
+                                                    @foreach($pagedata as $item)
+                                                        <option value="{{ $item->id }}">{{ $item->page }}</option>
+                                                    @endforeach
+                                                </select>
+                                            </div>
+                                        </div>
+                        
+                                        <div class="col-3 col-md-3">
+                                            <div class="custom-control form-control-lg custom-checkbox text-right" >
+                                                <br>
+                                                <input class="custom-control-input" type="checkbox" value="" name="submenu" id="submenu_page">
+                                                <label class="custom-control-label" for="submenu_page">{{__('Sub')}}</label> 
+                                            </div> 
+                                        </div>
+                        
+                                        <div class="col-12 col-md-12" id="div_perant_page" style="display: none;">
+                                            <div class="form-group">
+                                                <label for="level">Perant Menu Item</label>
+                                                <select class="form-control"name="perant" id="perant_page" value="0"required>
+                                                    
+                                                </select>
+                                                <div class="invalid-feedback">{{ __("Please Select perant")}}</div>
+                                            </div>
+                                        </div>
+                                        
+                                        <div class="col-12 col-md-12">
+                                            <hr>
+                                            <div class="pull-right pb-2">    
+                                                <button type="submit" class="btn btn-success btn-sm ml-2" id="btn_page_add"><i class="fa fa-check" aria-hidden="true"></i> {{ __("Add to Menu")}}</button>
+                                            </div> 
+                                        </div>
+
+                                    </div>
+                                </form>
                             </div>
                         </div> 
                         {{-- End Page item --}}
@@ -67,7 +108,7 @@ $name="name".$lang;
                             <div class="col ml-3">
                                 <a  class="filter_section" href="" data-toggle="collapse" data-target="#custom_item"><i class="fa fa-plus" aria-hidden="true"></i>&nbsp;<u>Custom Link</u></a>
                             </div>
-                            <div id="custom_item" class="collapse show">
+                            <div id="custom_item" class="collapse ">
                                 <form method="post" id="custom_item_form" class="needs-validation"  novalidate>
                                     {{ csrf_field() }}
                                     <div class="row mx-2">
@@ -82,15 +123,15 @@ $name="name".$lang;
                                         <div class="col-3 col-md-3">
                                             <div class="custom-control form-control-lg custom-checkbox text-right" >
                                                 <br>
-                                                <input class="custom-control-input" type="checkbox" value="" name="submenu" id="submenu">
-                                                <label class="custom-control-label" for="submenu">{{__('SubMenu')}}</label> 
+                                                <input class="custom-control-input" type="checkbox" value="" name="submenu" id="submenu_custom">
+                                                <label class="custom-control-label" for="submenu_custom">{{__('Sub')}}</label> 
                                             </div> 
                                         </div>
                         
-                                        <div class="col-12 col-md-12" id="div_perant" style="display: none;">
+                                        <div class="col-12 col-md-12" id="div_perant_custom" style="display: none;">
                                             <div class="form-group">
                                                 <label for="level">Perant Menu Item</label>
-                                                <select class="form-control"name="perant" id="perant" value="0"required>
+                                                <select class="form-control"name="perant" id="perant_custom" value="0"required>
                                                     
                                                 </select>
                                                 <div class="invalid-feedback">{{ __("Please Select perant")}}</div>
@@ -168,14 +209,26 @@ $name="name".$lang;
         $('#nestable-output').val(JSON.stringify($('#nestable').nestable('serialize')));
     };
 
-    $('#submenu').change(function() {
-        if($('#submenu').prop("checked") == true){
-            $('#div_perant').fadeIn();
+    $('#submenu_page').change(function() {
+        if($('#submenu_page').prop("checked") == true){
+            // alert();
+            $('#div_perant_page').fadeIn();
             load_menu_item();
         }
         else{
-            $('#div_perant').fadeOut();
-            $('#perant').val('0');
+            $('#div_perant_page').fadeOut();
+            $('.perant').val('0');
+        }
+    });
+
+    $('#submenu_custom').change(function() {
+        if($('#submenu_custom').prop("checked") == true){
+            $('#div_perant_custom').fadeIn();
+            load_menu_item();
+        }
+        else{
+            $('#div_perant_custom').fadeOut();
+            $('.perant').val('0');
         }
     });
 
@@ -188,7 +241,7 @@ $name="name".$lang;
             ({
                 type: "POST",
                 dataType : 'json',
-                url: "{{route('add_menu_item')}}", 
+                url: "{{route('add_menu_item_custom')}}", 
                 data: formData,
                 contentType: false,
                 cache: false,
@@ -202,8 +255,44 @@ $name="name".$lang;
                     console.log(data.data);
                     toastr.success('Menu item Added Successfully')
                     $("#custom_item_form").trigger("reset");
-                    $('.submenu').prop('checked', false);
-                    $('#div_perant').fadeOut();
+                    $('#submenu_custom').prop('checked', false);
+                    $('#div_perant_custom').fadeOut();
+                    load_menu();
+                   
+                },
+                error:function(data){
+                    toastr.error('Menu item Add faild Plese try again')
+                },
+                complete:function(data){
+                    // $("#loader").hide();
+                }
+            })
+    });
+
+    $('#page_form').on('submit', function(event){
+        event.preventDefault();
+        var formData = new FormData(this);
+        
+        $.ajax
+            ({
+                type: "POST",
+                dataType : 'json',
+                url: "{{route('add_menu_item_page')}}", 
+                data: formData,
+                contentType: false,
+                cache: false,
+                processData: false,
+
+                beforeSend: function(){
+                    // $("#loader").show();
+                },
+
+                success:function(data){
+                    console.log(data.data);
+                    toastr.success('Menu item Added Successfully')
+                    $("#page_form").trigger("reset");
+                    $('#submenu_page').prop('checked', false);
+                    $('#div_perant_page').fadeOut();
                     load_menu();
                    
                 },
@@ -229,7 +318,8 @@ $name="name".$lang;
                 {
                     op+='<option value="'+data[i].id+'">'+ data[i].item+'</option>';
                 }
-                $("#perant").empty().append(op);
+                $("#perant_page").empty().append(op);
+                $("#perant_custom").empty().append(op);
             },
             error:function(data){
             }
