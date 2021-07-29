@@ -520,9 +520,17 @@
   </div>
   
 </section><!-- End About Section -->
-  @endsection
+
+{{-- --------- --}}
+
+@endsection
 
   @section('script')
+  <script>
+    $(document).ready(function() {
+
+    });
+  </script>
   <script src="{{ asset('js/adminlte.js') }}"></script>
   <script>
   
@@ -551,5 +559,7 @@
       }
 
     });
+
+    
   </script>
   @endsection

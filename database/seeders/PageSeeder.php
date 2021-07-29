@@ -36,6 +36,11 @@ class PageSeeder extends Seeder
             ['page'=>'Final Account','page_type'=>'static','page_status'=>'1','link'=>'final_account'],
 
             ['page'=>'Information','page_type'=>'static','page_status'=>'1','link'=>'information'],
+            ['page'=>'Sabha Information','page_type'=>'static','page_status'=>'1','link'=>'sabha_information'],
+            ['page'=>'Common Information','page_type'=>'static','page_status'=>'1','link'=>'commom_information'],
+
+            ['page'=>'Blog','page_type'=>'static','page_status'=>'1','link'=>'blog'],
+
             ['page'=>'Gallery','page_type'=>'static','page_status'=>'1','link'=>'gallery'],
             ['page'=>'Contact ','page_type'=>'static','page_status'=>'1','link'=>'contact'],
 
